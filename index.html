@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sutra Health | Lifestyle Medicine & Yoga Therapy to Reverse Chronic Diseases | Faridabad</title>
+    <link rel="icon" type="image/x-icon" href="./image/Sutrahealth Logo.png">
+
+<style>
+  :root{
+    --dark-green:#12332b;
+    --gold:#c99a3a;
+    --cream:#f8f5ee;
+    --text:#1c2b26;
+    --muted:#4d5a55;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'Segoe UI', Arial, sans-serif;
+    background:#fff;
+  }
+
+  /* ===== NAVBAR ===== */
+  .navbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 40px;
+    background:var(--cream);
+    border-bottom:1px solid #eae5d8;
+    position:sticky;
+    top: 0;
+    z-index:1000;
+  }
+
+  /* Logo */
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    flex-shrink:0;
+  }
+  .logo-icon{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    border:2px solid var(--gold);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--cream);
+    flex-shrink:0;
+  }
+  .logo-icon img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+  }
+  .logo-text h1{
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:22px;
+    color:var(--dark-green);
+    line-height:1.1;
+  }
+  .logo-text span{
+    font-size:11px;
+    letter-spacing:.5px;
+    color:var(--muted);
+    display:block;
+  }
+
+  /* Nav links */
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    list-style:none;
+  }
+  .nav-links > li{
+    position:relative;
+  }
+  .nav-links a{
+    text-decoration:none;
+    color:var(--text);
+    font-size:15px;
+    font-weight:500;
+    display:flex;
+    align-items:center;
+    gap:5px;
+    padding:10px 2px;
+    cursor:pointer;
+  }
+  .nav-links > li.active > a{
+    color:var(--dark-green);
+    font-weight:600;
+  }
+  .nav-links > li.active > a::after{
+    content:"";
+    position:absolute;
+    bottom:-2px;
+    left:0;
+    width:100%;
+    height:2px;
+    background:var(--dark-green);
+  }
+  .nav-links a .arrow{
+    width:9px; height:9px;
+    border-right:2px solid currentColor;
+    border-bottom:2px solid currentColor;
+    transform:rotate(45deg);
+    margin-top:-3px;
+    transition:transform .2s ease;
+  }
+  .has-dropdown.open > a .arrow{
+    transform:rotate(-135deg);
+    margin-top:3px;
+  }
+
+  /* Dropdown */
+  .dropdown{
+    position:absolute;
+    top:calc(100% + 14px);
+    left:0;
+    min-width:220px;
+    background:#fff;
+    border-radius:8px;
+    box-shadow:0 12px 30px rgba(18,51,43,.15);
+    padding:10px 0;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(8px);
+    transition:opacity .18s ease, transform .18s ease, visibility .18s;
+  }
+  .has-dropdown:hover .dropdown,
+  .has-dropdown.open .dropdown{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+  }
+  .dropdown a{
+    display:block;
+    padding:10px 20px;
+    font-size:14px;
+    color:var(--text);
+    white-space:nowrap;
+  }
+  .dropdown a:hover{
+    background:var(--cream);
+    color:var(--dark-green);
+  }
+
+  /* CTA button */
+  .cta-btn{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:var(--dark-green);
+    color:#fff;
+    padding:12px 22px;
+    border-radius:6px;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .cta-btn:hover{ background:#0b241d; }
+
+  /* Hamburger (mobile only) */
+  .hamburger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:8px;
+    z-index:1100;
+  }
+  .hamburger span{
+    width:26px;
+    height:2px;
+    background:var(--dark-green);
+    display:block;
+    transition:all .25s ease;
+  }
+  .hamburger.active span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .hamburger.active span:nth-child(2){ opacity:0; }
+  .hamburger.active span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+  .nav-right{
+    display:flex;
+    align-items:center;
+    gap:30px;
+  }
+
+  /* ===================== MOBILE ===================== */
+  @media (max-width: 992px){
+    .navbar{ padding:14px 20px; }
+
+    .hamburger{ display:flex; }
+
+    .nav-right{
+      position:fixed;
+      top:0; right:0;
+      height:100vh;
+      width:100%;
+      background:var(--cream);
+      flex-direction:column;
+      align-items:stretch;
+      gap:0;
+      padding:90px 24px 24px;
+      transform:translateX(100%);
+      transition:transform .3s ease;
+      overflow-y:auto;
+      box-shadow:-8px 0 24px rgba(0,0,0,.15);
+    }
+    .nav-right.open{ transform:translateX(0); }
+
+    .nav-links{
+      flex-direction:column;
+      align-items:stretch;
+      gap:0;
+      width:100%;
+    }
+    .nav-links > li{
+      border-bottom:1px solid #e5e0d2;
+    }
+    .nav-links a{
+      padding:16px 4px;
+      justify-content:space-between;
+      width:100%;
+    }
+    .nav-links > li.active > a::after{ display:none; }
+
+    .dropdown{
+      position:static;
+      box-shadow:none;
+      opacity:1;
+      visibility:visible;
+      transform:none;
+      display:none;
+      background:transparent;
+      padding:0 0 8px 12px;
+      transition:none;
+    }
+    .has-dropdown.open .dropdown{ display:block; }
+    .dropdown a{ padding:10px 4px; font-size:13.5px; color:var(--muted); }
+
+    .cta-btn{
+      justify-content:center;
+      margin-top:20px;
+    }
+
+    /* overlay */
+    .overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.35);
+      opacity:0;
+      visibility:hidden;
+      transition:opacity .3s ease;
+      z-index:999;
+    }
+    .overlay.show{ opacity:1; visibility:visible; }
+  }
+
+  @media (max-width: 480px){
+    .logo-text h1{ font-size:18px; }
+    .logo-text span{ font-size:9.5px; }
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    background:url('./image/hero1.jpg') center/cover no-repeat;
+    padding:70px 40px 50px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg, rgba(248,245,238,.97) 0%, rgba(248,245,238,.9) 35%, rgba(248,245,238,.35) 60%, rgba(248,245,238,0) 78%);
+  }
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    max-width:1300px;
+    margin:0 auto;
+  }
+  .hero-content{ max-width:fit-content; }
+
+  .hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 16px;
+    border:1px solid #bcdcc5;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.5px;
+    color:var(--dark-green);
+    background:rgba(255,255,255,.5);
+    margin-bottom:22px;
+  }
+
+  .hero h2{
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:52px;
+    line-height:1.15;
+    color:var(--dark-green);
+    margin-bottom:20px;
+  }
+  .hero h2 .accent{ color:#5c9c68; display:block; }
+
+  .hero p.lead{
+    font-size:16.5px;
+    line-height:1.7;
+    color:var(--muted);
+    max-width:520px;
+    margin-bottom:30px;
+  }
+  .hero p.lead b{ color:var(--dark-green); font-weight:600; }
+
+  .hero-ctas{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-bottom:36px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 24px;
+    border-radius:30px;
+    font-size:14.5px;
+    font-weight:600;
+    text-decoration:none;
+    white-space:nowrap;
+    border:1.5px solid transparent;
+  }
+  .btn-primary{ background:var(--dark-green); color:#fff; }
+  .btn-primary:hover{ background:#0b241d; }
+  .btn-outline{ background:#fff; color:var(--dark-green); border-color:#cfe3d4; }
+  .btn-outline:hover{ border-color:var(--dark-green); }
+  .btn-gold{ background:#fff; color:var(--gold); border-color:var(--gold); }
+  .btn-gold:hover{ background:#fdf6e8; }
+
+  .hero-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    background:rgba(255,255,255,.6);
+    border:1px solid #ece6d6;
+    border-radius:14px;
+    padding:20px 22px;
+    max-width:fit-content;
+    backdrop-filter:blur(4px);
+  }
+  .stat{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .stat .icon{
+    width:34px; height:34px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#eef4ec;
+    color:var(--dark-green);
+    font-size:15px;
+  }
+  .stat .label{
+    font-size:12.5px;
+    line-height:1.35;
+    color:var(--text);
+    font-weight:600;
+  }
+
+  /* ===== HERO RESPONSIVE ===== */
+  @media (max-width: 992px){
+    .hero{
+      padding:44px 20px 36px;
+      background-position:75% center;
+    }
+    .hero::before{
+      background:linear-gradient(180deg, rgba(248,245,238,.97) 0%, rgba(248,245,238,.95) 45%, rgba(248,245,238,.9) 100%);
+    }
+    .hero-content{
+      max-width:100%;
+      text-align:center;
+      margin:0 auto;
+    }
+    .hero h2{ font-size:36px; }
+    .hero p.lead{ margin-left:auto; margin-right:auto; }
+    .hero-ctas{ justify-content:center; }
+    .hero-stats{
+      grid-template-columns:repeat(2,1fr);
+      max-width:100%;
+      margin:0 auto;
+    }
+    .stat{ justify-content:center; text-align:left; }
+  }
+
+  @media (max-width: 480px){
+    .hero{ background-position:80% center; }
+    .hero h2{ font-size:28px; }
+    .hero p.lead{ font-size:14.5px; }
+    .hero-badge{ font-size:10.5px; padding:7px 12px; }
+    .hero-ctas{ flex-direction:column; align-items:stretch; }
+    .btn{ padding:12px 18px; font-size:13px; justify-content:center; }
+    .hero-stats{ grid-template-columns:1fr 1fr; padding:16px; gap:14px; }
+    .stat{ justify-content:flex-start; }
+    .stat .label{ font-size:11px; }
+  }
+
+  /* ===== WHO WE ARE ===== */
+  .whoweare{
+    background:var(--cream);
+    padding:80px 40px;
+  }
+  .whoweare-inner{
+    max-width:1200px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:.95fr 1.05fr;
+    gap:56px;
+    align-items:center;
+  }
+  .whoweare-media{
+    width:100%;
+    aspect-ratio:4/5;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 20px 40px rgba(18,51,43,.15);
+  }
+  .whoweare-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  .whoweare-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 16px;
+    border:1px solid #e6d4a8;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.6px;
+    color:var(--gold);
+    background:#fff;
+    margin-bottom:20px;
+  }
+
+  .whoweare h2{
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:38px;
+    line-height:1.2;
+    color:var(--dark-green);
+    margin-bottom:22px;
+  }
+
+  .whoweare-lead{
+    border-left:3px solid var(--gold);
+    padding-left:20px;
+    font-size:16px;
+    line-height:1.75;
+    color:var(--text);
+    margin-bottom:34px;
+  }
+  .whoweare-lead strong{ color:var(--dark-green); }
+
+  .whoweare-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:18px;
+  }
+  .whoweare-grid .full{ grid-column:1 / -1; max-width:calc(50% - 9px); }
+
+  .whoweare-card{
+    background:#fff;
+    border:1px solid #ece7d8;
+    border-radius:14px;
+    padding:22px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .whoweare-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 28px rgba(18,51,43,.08);
+  }
+  .whoweare-icon{
+    width:44px; height:44px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:19px;
+    margin-bottom:14px;
+  }
+  .whoweare-icon.leaf{ background:#eef3e2; }
+  .whoweare-icon.yoga{ background:#fdeedc; }
+  .whoweare-icon.data{ background:#e6eefb; }
+
+  .whoweare-card h3{
+    font-size:16px;
+    font-weight:700;
+    color:var(--dark-green);
+    margin-bottom:8px;
+  }
+  .whoweare-card p{
+    font-size:13.5px;
+    line-height:1.6;
+    color:var(--muted);
+  }
+
+  @media (max-width: 992px){
+    .whoweare{ padding:56px 24px; }
+    .whoweare-inner{
+      grid-template-columns:1fr;
+      gap:36px;
+    }
+    .whoweare-media{ aspect-ratio:16/10; max-width:520px; margin:0 auto; }
+    .whoweare h2{ font-size:30px; }
+  }
+
+  @media (max-width: 640px){
+    .whoweare{ padding:44px 18px; }
+    .whoweare h2{ font-size:26px; }
+    .whoweare-lead{ font-size:14.5px; padding-left:16px; }
+    .whoweare-grid{ grid-template-columns:1fr; }
+    .whoweare-grid .full{ max-width:100%; }
+    .whoweare-card{ padding:18px; }
+  }
+
+  /* ===== PROGRAMS & SCOPE ===== */
+  .programs{
+    background:#fff;
+    padding:80px 40px;
+  }
+  .programs-inner{
+    max-width:1200px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:.85fr 1fr;
+    gap:70px;
+    align-items:start;
+  }
+
+  .programs-eyebrow{
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.8px;
+    color:#2f7a45;
+    text-transform:uppercase;
+    position:relative;
+    display:inline-block;
+    padding-bottom:8px;
+    margin-bottom:14px;
+  }
+  .programs-eyebrow::after{
+    content:"";
+    position:absolute;
+    left:0; bottom:0;
+    width:34px; height:2px;
+    background:#2f7a45;
+  }
+  .programs h2{
+    font-family:Georgia, 'Times New Roman', serif;
+    font-weight:700;
+    font-size:44px;
+    line-height:1.15;
+    color:var(--dark-green);
+    margin-bottom:26px;
+  }
+  .programs-divider{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    color:#8faf95;
+    margin-bottom:28px;
+  }
+  .programs-divider::before,
+  .programs-divider::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:#e4e0d2;
+  }
+  .programs-divider svg{ width:20px; height:20px; flex-shrink:0; }
+
+  .programs p{
+    font-size:16px;
+    line-height:1.75;
+    color:var(--text);
+    margin-bottom:18px;
+  }
+  .programs p strong{ color:#2f7a45; font-weight:700; }
+  .programs p:last-of-type{ color:var(--muted); }
+
+  .programs-right{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+
+  .approach-card{
+    background:#fff;
+    border:1px solid #ece7d8;
+    border-radius:16px;
+    padding:34px;
+    box-shadow:0 10px 30px rgba(18,51,43,.06);
+  }
+  .approach-icon{
+    width:56px; height:56px;
+    border-radius:50%;
+    background:#e4f3e6;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:18px;
+  }
+  .approach-icon svg{ width:26px; height:26px; }
+  .approach-card h3{
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:26px;
+    color:var(--dark-green);
+    margin-bottom:14px;
+  }
+  .approach-card p{
+    font-size:15px;
+    line-height:1.7;
+    color:var(--text);
+    margin-bottom:16px;
+  }
+  .approach-card p strong{ color:#2f7a45; font-weight:700; }
+  .approach-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:14.5px;
+    font-weight:600;
+    color:var(--dark-green);
+    text-decoration:none;
+    border-bottom:1.5px solid var(--dark-green);
+    padding-bottom:2px;
+  }
+  .approach-link svg{ width:14px; height:14px; }
+
+  .score-card{
+    background:#e7f4e9;
+    border-radius:16px;
+    padding:30px 34px;
+    display:flex;
+    align-items:center;
+    gap:22px;
+  }
+  .score-icon{
+    width:64px; height:64px;
+    border-radius:50%;
+    background:#cfe9d3;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+  .score-icon svg{ width:28px; height:28px; }
+  .score-text{ flex:1; }
+  .score-text h4{
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:19px;
+    color:var(--dark-green);
+    margin-bottom:6px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .score-text p{
+    font-size:14.5px;
+    line-height:1.6;
+    color:var(--text);
+  }
+  .score-text a{
+    color:#2461c9;
+    text-decoration:underline;
+  }
+  .score-arrow{
+    width:48px; height:48px;
+    border-radius:50%;
+    background:var(--dark-green);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    text-decoration:none;
+  }
+  .score-arrow svg{ width:20px; height:20px; }
+
+  /* Desktop-only refinement: keep cards visually aligned to a max width so they don't stretch too wide on ultra-large screens */
+  @media (min-width: 1400px){
+    .programs-inner{ max-width:1300px; }
+  }
+
+  @media (max-width: 992px){
+    .programs{ padding:56px 24px; }
+    .programs-inner{
+      grid-template-columns:1fr;
+      gap:36px;
+    }
+    .programs h2{ font-size:34px; }
+  }
+
+  @media (max-width: 480px){
+    .programs{ padding:44px 18px; }
+    .programs h2{ font-size:28px; }
+    .programs-eyebrow{ font-size:12px; }
+    .approach-card{ padding:24px; }
+    .approach-card h3{ font-size:22px; }
+    .score-card{
+      flex-direction:column;
+      align-items:flex-start;
+      text-align:left;
+      padding:24px;
+    }
+    .score-arrow{ align-self:flex-end; }
+  }
+
+  /* ===== CONDITIONS WE TREAT ===== */
+  .conditions{
+    background:var(--cream);
+    padding:80px 40px;
+  }
+  .conditions-inner{
+    max-width:1200px;
+    margin:0 auto;
+  }
+  .conditions-head{
+    text-align:center;
+    max-width:640px;
+    margin:0 auto 46px;
+  }
+  .conditions-eyebrow{
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.8px;
+    color:#2f7a45;
+    text-transform:uppercase;
+    margin-bottom:12px;
+    display:block;
+  }
+  .conditions-head h2{
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:36px;
+    color:var(--dark-green);
+    margin-bottom:12px;
+  }
+  .conditions-head p{
+    font-size:15.5px;
+    line-height:1.6;
+    color:var(--muted);
+  }
+
+  .conditions-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+  }
+
+  .condition-card{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    background:#fff;
+    border:1px solid #ece7d8;
+    border-radius:14px;
+    padding:24px;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .condition-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 14px 30px rgba(18,51,43,.09);
+    border-color:#d9ead9;
+  }
+  .condition-icon{
+    width:48px; height:48px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:21px;
+    flex-shrink:0;
+  }
+  .condition-icon.blue{ background:#e5eefc; }
+  .condition-icon.pink{ background:#fdeaf0; }
+  .condition-icon.red{ background:#fdecec; }
+  .condition-icon.yellow{ background:#fdf3dc; }
+  .condition-icon.magenta{ background:#fbe7f3; }
+  .condition-icon.gold{ background:#fbf0d9; }
+
+  .condition-body h3{
+    font-size:16.5px;
+    font-weight:700;
+    color:#2f7a45;
+    line-height:1.3;
+    margin-bottom:8px;
+  }
+  .condition-body p{
+    font-size:14px;
+    line-height:1.6;
+    color:var(--text);
+  }
+
+  @media (max-width: 992px){
+    .conditions{ padding:56px 24px; }
+    .conditions-grid{ grid-template-columns:repeat(2, 1fr); }
+    .conditions-head h2{ font-size:30px; }
+  }
+
+  @media (max-width: 640px){
+    .conditions{ padding:44px 18px; }
+    .conditions-grid{ grid-template-columns:1fr; gap:16px; }
+    .condition-card{ padding:20px; }
+    .conditions-head h2{ font-size:26px; }
+    .conditions-head p{ font-size:14px; }
+  }
+
+  /* ===== EVIDENCE SUMMARY ===== */
+  .evidence{
+    background:var(--cream);
+    padding:0 40px 80px;
+  }
+  .evidence-inner{
+    max-width:1200px;
+    margin:0 auto;
+  }
+
+  .evidence-card{
+    background:#fff;
+    border-radius:18px;
+    padding:44px 48px;
+    box-shadow:0 12px 34px rgba(18,51,43,.07);
+    margin-bottom:22px;
+  }
+  .evidence-claim{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    margin-bottom:24px;
+  }
+  .evidence-claim .badge{
+    width:30px; height:30px;
+    border-radius:50%;
+    background:#e4f3e6;
+    color:#218a45;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    font-size:15px;
+    margin-top:2px;
+  }
+  .evidence-claim p{
+    font-size:21px;
+    font-weight:700;
+    line-height:1.4;
+    color:var(--text);
+  }
+
+  .evidence-subhead{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:17px;
+    font-weight:700;
+    color:var(--text);
+    margin-bottom:16px;
+  }
+
+  .evidence-list{
+    list-style:none;
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:12px 24px;
+  }
+  .evidence-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    font-size:15px;
+    line-height:1.5;
+    color:var(--text);
+  }
+  .evidence-list .check{
+    width:20px; height:20px;
+    border-radius:6px;
+    background:#218a45;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    flex-shrink:0;
+    margin-top:2px;
+  }
+
+  .evidence-features{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:18px;
+  }
+    .evidence-eyebrow{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.8px;
+    color:#2f7a45;
+    text-transform:uppercase;
+    margin-bottom:16px;
+  }
+  .evidence-feature{
+    background:#fff;
+    border:1px solid #ece7d8;
+    border-radius:14px;
+    padding:26px 20px;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .evidence-feature:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 26px rgba(18,51,43,.08);
+  }
+  .evidence-feature .icon-circle{
+    width:46px; height:46px;
+    border-radius:50%;
+    background:#eef4ec;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:19px;
+  }
+  .evidence-feature span.label{
+    font-size:14.5px;
+    font-weight:600;
+    color:var(--text);
+    line-height:1.4;
+  }
+
+  @media (max-width: 992px){
+    .evidence{ padding:0 24px 56px; }
+    .evidence-card{ padding:32px 28px; }
+    .evidence-claim p{ font-size:18px; }
+    .evidence-features{ grid-template-columns:repeat(2, 1fr); }
+  }
+
+  @media (max-width: 640px){
+    .evidence{ padding:0 18px 44px; }
+    .evidence-card{ padding:24px 20px; border-radius:14px; }
+    .evidence-claim p{ font-size:16px; }
+    .evidence-subhead{ font-size:15.5px; }
+    .evidence-list{ grid-template-columns:1fr; }
+    .evidence-list li{ font-size:14px; }
+    .evidence-features{ grid-template-columns:1fr; }
+    .evidence-feature{
+      flex-direction:row;
+      text-align:left;
+      padding:16px 18px;
+    }
+    .evidence-feature span.label{ font-size:14px; }
+  }
+
+  /* ===== FLOATING WHATSAPP BUTTON ===== */
+  .whatsapp-float{
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    width:58px; height:58px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+    z-index:2000;
+    text-decoration:none;
+    animation:wa-pulse 2.4s infinite;
+  }
+  .whatsapp-float svg{ width:30px; height:30px; }
+  .whatsapp-float:hover{ background:#1ebd5a; }
+
+  @keyframes wa-pulse{
+    0%{ box-shadow:0 8px 20px rgba(0,0,0,.25), 0 0 0 0 rgba(37,211,102,.5); }
+    70%{ box-shadow:0 8px 20px rgba(0,0,0,.25), 0 0 0 14px rgba(37,211,102,0); }
+    100%{ box-shadow:0 8px 20px rgba(0,0,0,.25), 0 0 0 0 rgba(37,211,102,0); }
+  }
+
+  @media (max-width: 640px){
+    .whatsapp-float{
+      width:52px; height:52px;
+      bottom:16px;
+      right:16px;
+    }
+    .whatsapp-float svg{ width:26px; height:26px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .whatsapp-float{ animation:none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="#" class="logo">
+    <span class="logo-icon">
+      <img src="./image/Sutrahealth Logo.png" alt="Sutra Health logo">
+    </span>
+    <span class="logo-text">
+      <h1>Sutra Health</h1>
+      <span>Integrative Lifestyle Healthcare</span>
+    </span>
+  </a>
+
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="nav-right" id="navRight">
+    <ul class="nav-links">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+
+      <li class="has-dropdown">
+        <a href="#">Why Integrative Medicine? <span class="arrow"></span></a>
+        <div class="dropdown">
+          <a href="#">Our Philosophy</a>
+          <a href="#">Root Cause Approach</a>
+          <a href="#">Meet the Doctors</a>
+        </div>
+      </li>
+
+      <li class="has-dropdown">
+        <a href="#">Programs <span class="arrow"></span></a>
+        <div class="dropdown">
+          <a href="#">Weight Management</a>
+          <a href="#">Diabetes Reversal</a>
+          <a href="#">Detox Program</a>
+          <a href="#">Stress & Sleep</a>
+        </div>
+      </li>
+
+      <li class="has-dropdown">
+        <a href="#">Yoga <span class="arrow"></span></a>
+        <div class="dropdown">
+          <a href="#">Beginner Yoga</a>
+          <a href="#">Therapeutic Yoga</a>
+          <a href="#">Pranayama</a>
+        </div>
+      </li>
+
+      <li class="has-dropdown">
+        <a href="#">Lifestyle <span class="arrow"></span></a>
+        <div class="dropdown">
+          <a href="#">Nutrition</a>
+          <a href="#">Sleep</a>
+          <a href="#">Mindfulness</a>
+        </div>
+      </li>
+
+      <li><a href="#">Resources</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <a href="#" class="cta-btn">
+      &#128197; Book Appointment &rarr;
+    </a>
+  </div>
+</nav>
+
+<div class="overlay" id="overlay"></div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <span class="hero-badge">🍃 INTEGRATIVE LIFESTYLE HEALTHCARE • FARIDABAD, HARYANA</span>
+
+      <h2>Reverse Chronic<span class="accent">Diseases Naturally</span></h2>
+
+      <p class="lead">
+        An evidence-based integrative approach uniting <b>yoga therapy</b>,
+        nutrition counselling, and lifestyle medicine to heal your body
+        from its root cause — not just manage symptoms.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#" class="btn btn-primary">🍃 Start Wellness Journey &rarr;</a>
+        <a href="#" class="btn btn-outline">🧘 Book Free Consultation</a>
+        <a href="#" class="btn btn-gold">👤 Book Retreat</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="icon">🛡️</span>
+          <span class="label">Evidence-Based<br>Approach</span>
+        </div>
+        <div class="stat">
+          <span class="icon">🧑‍🤝‍🧑</span>
+          <span class="label">Holistic &<br>Personalized Care</span>
+        </div>
+        <div class="stat">
+          <span class="icon">👥</span>
+          <span class="label">1200+ Patients<br>Transformed</span>
+        </div>
+        <div class="stat">
+          <span class="icon">📍</span>
+          <span class="label">Serving Faridabad,<br>Delhi NCR & Beyond</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="programs">
+  <div class="programs-inner">
+    <div class="programs-left">
+      <span class="programs-eyebrow">Lifestyle Medicine</span>
+      <h2>Programs &amp; Scope</h2>
+
+      <div class="programs-divider">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#5c9c68" stroke-width="1.6">
+          <path d="M4 14c4-6 12-8 16-4-4 4-12 6-16 4z"/>
+          <path d="M4 14l4-1"/>
+        </svg>
+      </div>
+
+      <p>
+        We work with the willing — those ready to take an active role in
+        their own health — to help them adopt lifestyles that
+        <strong>prevent disease, restore vitality, and build lasting wellness.</strong>
+      </p>
+      <p>
+        Our integrative protocol is designed for patients across Faridabad,
+        Delhi NCR, and beyond.
+      </p>
+    </div>
+
+    <div class="programs-right">
+      <div class="approach-card">
+        <span class="approach-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#12332b" stroke-width="1.8">
+            <path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+        </span>
+        <h3>Our Approach</h3>
+        <p>
+          Our approach is grounded in an <strong>evidence-based protocol</strong>
+          that brings together diet, Yoga therapy, and lifestyle modification.
+        </p>
+        <p>
+          Using a traffic light system, we guide and support meaningful,
+          sustainable behavior change anchored to our
+          <strong>21-point Health Building Guidelines.</strong>
+        </p>
+        <a href="#" class="approach-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#12332b" stroke-width="1.8">
+            <path d="M7 3h7l5 5v13H7z"/>
+            <path d="M13 3v5h5"/>
+          </svg>
+          Read the clinical evidence &rarr;
+        </a>
+      </div>
+
+      <div class="score-card">
+        <span class="score-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#12332b" stroke-width="1.8">
+            <path d="M8 4h8v3H8z"/>
+            <path d="M6 6h12v15H6z"/>
+            <path d="M12 12l1.6 1.6L17 10"/>
+          </svg>
+        </span>
+        <div class="score-text">
+          <h4>✨ What's your Lifestyle score?</h4>
+          <p>Answer 21 questions and get your personalized health score <a href="#">here</a>.</p>
+        </div>
+        <a href="#" class="score-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+            <path d="M5 12h14"/>
+            <path d="M13 6l6 6-6 6"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="conditions">
+  <div class="conditions-inner">
+    <div class="conditions-head">
+      <span class="conditions-eyebrow">Real Results</span>
+      <h2>Conditions We Help Reverse</h2>
+      <p>Evidence-based outcomes across the chronic conditions our patients bring to us most.</p>
+    </div>
+
+    <div class="conditions-grid">
+      <div class="condition-card">
+        <span class="condition-icon blue">📖</span>
+        <div class="condition-body">
+          <h3>Functional Bowel Disorders</h3>
+          <p>Improved gut health & reduced bloating through yoga & diet</p>
+        </div>
+      </div>
+
+      <div class="condition-card">
+        <span class="condition-icon pink">❤️</span>
+        <div class="condition-body">
+          <h3>Hypertension Treatment</h3>
+          <p>Lower blood pressure & reduced medication reliance through lifestyle changes</p>
+        </div>
+      </div>
+
+      <div class="condition-card">
+        <span class="condition-icon red">🩸</span>
+        <div class="condition-body">
+          <h3>Diabetes Reversal</h3>
+          <p>Stable glucose levels & improved insulin sensitivity naturally</p>
+        </div>
+      </div>
+
+      <div class="condition-card">
+        <span class="condition-icon yellow">🌙</span>
+        <div class="condition-body">
+          <h3>Menstrual Disorders</h3>
+          <p>Hormonal balance & pain reduction through yoga therapy</p>
+        </div>
+      </div>
+
+      <div class="condition-card">
+        <span class="condition-icon magenta">💭</span>
+        <div class="condition-body">
+          <h3>Migraine Relief</h3>
+          <p>Less frequency & intensity with pranayama and lifestyle medicine</p>
+        </div>
+      </div>
+
+      <div class="condition-card">
+        <span class="condition-icon gold">🦴</span>
+        <div class="condition-body">
+          <h3>Arthritis Management</h3>
+          <p>Reduced inflammation & improved joint mobility through movement therapy</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="evidence">
+  <div class="evidence-inner">
+    <div class="evidence-card">
+        <span class="evidence-eyebrow">🌿 Evidence-Based Care 🌿</span>
+      <div class="evidence-claim">
+        <span class="badge">✓</span>
+        <p>Our evidence-based lifestyle medicine protocol has shown real clinical promise across functional bowel disorders, hypertension, diabetes, menstrual disorders, migraines, and arthritis.</p>
+      </div>
+
+      <div class="evidence-subhead">
+        <span>🌟</span> 3 weeks of diligent practice can give you:
+      </div>
+
+      <ul class="evidence-list">
+        <li><span class="check">✓</span> Better digestive health and gut function</li>
+        <li><span class="check">✓</span> Lower blood pressure, reducing reliance on medication</li>
+        <li><span class="check">✓</span> Better quality sleep and stress relief</li>
+        <li><span class="check">✓</span> Boosted energy, immunity, and mental clarity</li>
+      </ul>
+    </div>
+
+    <div class="evidence-features">
+      <div class="evidence-feature">
+        <span class="icon-circle">🌿</span>
+        <span class="label">Whole-person healing of body and mind</span>
+      </div>
+      <div class="evidence-feature">
+        <span class="icon-circle">🎯</span>
+        <span class="label">Targets root cause of chronic illness</span>
+      </div>
+      <div class="evidence-feature">
+        <span class="icon-circle">🏡</span>
+        <span class="label">You are in control — place, foods, pace</span>
+      </div>
+      <div class="evidence-feature">
+        <span class="icon-circle">📊</span>
+        <span class="label">Results-based — better health &amp; biomarkers</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="whoweare">
+  <div class="whoweare-inner">
+    <div class="whoweare-media">
+      <img src="./image/whoware.jpg" alt="Woman meditating at sunrise">
+    </div>
+
+    <div class="whoweare-content">
+      <span class="whoweare-eyebrow">✦ WHO WE ARE</span>
+      <h2>Holistic Healing — Not Just Symptom Management</h2>
+
+      <p class="whoweare-lead">
+        At Sutra Health (Life Quality), we merge <strong>evidence-based
+        lifestyle medicine</strong>, <strong>yoga therapy</strong>, and modern
+        clinical insights to help you reverse chronic conditions naturally.
+        Based in Faridabad, Haryana, we have served over 1200 patients
+        across India since 1997.
+      </p>
+
+      <div class="whoweare-grid">
+        <div class="whoweare-card">
+          <span class="whoweare-icon leaf">🌿</span>
+          <h3>Integrative Protocol</h3>
+          <p>Evidence-based diet & lifestyle modification for chronic disease reversal</p>
+        </div>
+
+        <div class="whoweare-card">
+          <span class="whoweare-icon yoga">🧘</span>
+          <h3>Yoga Therapy</h3>
+          <p>Therapeutic movement, pranayama & yoga nidra for healing</p>
+        </div>
+
+        <div class="whoweare-card full">
+          <span class="whoweare-icon data">📊</span>
+          <h3>Root-Cause Healing</h3>
+          <p>Targeting the source of chronic illness, not just symptoms</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a href="https://wa.me/910000000000" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="#fff"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.7 4.605 1.912 6.47L4 29l7.72-1.876A11.94 11.94 0 0016.001 27C22.63 27 28 21.627 28 15S22.63 3 16.001 3zm0 21.75a9.7 9.7 0 01-4.95-1.354l-.355-.21-4.583 1.113 1.135-4.47-.232-.366A9.7 9.7 0 016.25 15c0-5.383 4.368-9.75 9.751-9.75S25.75 9.617 25.75 15 21.384 24.75 16.001 24.75zm5.36-7.302c-.294-.147-1.74-.858-2.01-.956-.27-.098-.467-.147-.663.147-.196.294-.76.956-.932 1.152-.171.196-.343.221-.637.074-.294-.147-1.24-.457-2.362-1.457-.873-.779-1.463-1.741-1.635-2.035-.171-.294-.018-.453.129-.6.132-.132.294-.343.44-.514.148-.172.196-.294.294-.49.098-.196.049-.368-.025-.515-.074-.147-.663-1.6-.909-2.192-.24-.575-.484-.497-.663-.506l-.564-.01c-.196 0-.515.074-.784.368-.27.294-1.03 1.006-1.03 2.454s1.055 2.847 1.202 3.043c.147.196 2.077 3.17 5.032 4.444.703.303 1.251.484 1.679.62.705.224 1.347.192 1.855.117.566-.085 1.74-.712 1.985-1.4.245-.687.245-1.276.171-1.4-.073-.123-.269-.196-.563-.343z"/></svg>
+</a>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navRight = document.getElementById('navRight');
+  const overlay = document.getElementById('overlay');
+  const dropdownParents = document.querySelectorAll('.has-dropdown');
+
+  function closeMenu(){
+    hamburger.classList.remove('active');
+    navRight.classList.remove('open');
+    overlay.classList.remove('show');
+    dropdownParents.forEach(li => li.classList.remove('open'));
+  }
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = navRight.classList.toggle('open');
+    hamburger.classList.toggle('active', isOpen);
+    overlay.classList.toggle('show', isOpen);
+  });
+
+  overlay.addEventListener('click', closeMenu);
+
+  // Dropdown toggle: click on mobile, hover on desktop (hover handled via CSS)
+  dropdownParents.forEach(li => {
+    const link = li.querySelector('a');
+    link.addEventListener('click', (e) => {
+      if (window.innerWidth <= 992){
+        e.preventDefault();
+        const isOpen = li.classList.contains('open');
+        dropdownParents.forEach(other => other.classList.remove('open'));
+        li.classList.toggle('open', !isOpen);
+      }
+    });
+  });
+
+  // Close mobile menu when a normal link (no dropdown) is clicked
+  document.querySelectorAll('.nav-links > li:not(.has-dropdown) > a, .dropdown a').forEach(a => {
+    a.addEventListener('click', () => {
+      if (window.innerWidth <= 992) closeMenu();
+    });
+  });
+
+  // Reset state on resize back to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 992) closeMenu();
+  });
+</script>
+
+</body>
+</html>
