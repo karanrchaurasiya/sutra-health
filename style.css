@@ -204,11 +204,6 @@
     outline: 0 !important;
   }
 
-  .navbar::before,
-  .navbar::after {
-    display: none !important;
-    content: none !important;
-  }
 
     .hamburger{ display:flex; }
 
