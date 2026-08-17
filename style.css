@@ -209,7 +209,6 @@
     
    .nav-right {
     position:fixed;
-    top:45px;
     right:0;
     height:calc(100vh - 90px);
     width:100%;
