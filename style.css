@@ -210,7 +210,7 @@
    .nav-right {
     position:fixed;
     right:0;
-     top:77px;
+     top:75px;
     height:calc(100vh - 90px);
     width:100%;
     background:var(--cream);
