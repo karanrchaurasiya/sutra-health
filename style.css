@@ -197,14 +197,27 @@
 
   /* ===================== MOBILE ===================== */
   @media (max-width: 992px){
-    .navbar{ 
-    border: 0 !important;
+     .navbar {
+    border: none !important;
     border-bottom: 0 !important;
     box-shadow: none !important;
-    outline: 0 !important;
-      padding:14px 20px;
-          background: red !important;
+    outline: none !important;
+  }
 
+  /* Mobile menu */
+  .nav-right {
+    border: none !important;
+    border-top: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Remove any pseudo-element line */
+  .navbar::before,
+  .navbar::after,
+  .nav-right::before,
+  .nav-right::after {
+    content: none !important;
+    display: none !important;
   }
 
 
