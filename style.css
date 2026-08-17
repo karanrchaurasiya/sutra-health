@@ -197,9 +197,18 @@
 
   /* ===================== MOBILE ===================== */
   @media (max-width: 992px){
-    .navbar{   padding: 14px 20px !important;
-    border: none !important;
-    box-shadow: none !important;}
+    .navbar{ 
+    border: 0 !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+  }
+
+  .navbar::before,
+  .navbar::after {
+    display: none !important;
+    content: none !important;
+  }
 
     .hamburger{ display:flex; }
 
@@ -222,7 +231,7 @@
     transition:transform .3s ease;
 
     overflow-y:auto;
-    box-shadow:-8px 0 24px rgba(0,0,0,.15);
+    box-shadow: none !important;
 
     z-index:1001;
     }
