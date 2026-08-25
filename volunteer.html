@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Volunteer With Us | Free Yoga Camps – Sutra Health</title>
+  <meta name="description" content="Join Sutra Health's wellness volunteer community in Faridabad. Free rooftop yoga clinics every Sunday plus our International Yoga Day camp on June 21.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <meta name="google-site-verification" content="YB30kQv11tWVKTi5jzv4woqVbUDmAkWP4CXK8nVGAKw" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- Technical / Local SEO -->
+  <meta name="robots" content="index,follow, max-image-preview:large">
+  <meta name="googlebot" content="index,follow">
+  <meta name="author" content="Life Quality">
+  <meta name="theme-color" content="#2E7D32">
+  <meta name="geo.region" content="IN-HR">
+  <meta name="geo.placename" content="Faridabad, Haryana">
+  <meta name="geo.position" content="28.3980;77.3141">
+  <meta name="ICBM" content="28.3980, 77.3141">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="canonical" href="https://lifequality.org.in/volunteer.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sutra Health">
+  <meta property="og:title" content="Volunteer With Us | Free Yoga &amp; Wellness Camps – Sutra Health">
+  <meta property="og:description" content="Join our wellness volunteer community in Faridabad — free rooftop yoga clinics every Sunday, community health camps, and our International Yoga Day event on June 21.">
+  <meta property="og:image" content="https://lifequality.org.in/assets/images/og-image.jpg">
+  <meta property="og:url" content="https://lifequality.org.in/heal-together.html">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Volunteer With Us | Free Yoga &amp; Wellness Camps – Sutra Health">
+  <meta name="twitter:description" content="Free rooftop yoga clinics every Sunday, community health camps, and our International Yoga Day event on June 21 in Faridabad.">
+  <meta name="twitter:image" content="https://lifequality.org.in/assets/images/og-image.jpg">
+
+  <!-- Preload hero image -->
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1400&auto=format&fit=crop" fetchpriority="high">
+  <style>
+    /* =========================================
+       RESET & BASE
+    ========================================= */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #f6f3eb;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; }
+
+    /* =========================================
+       HERO SECTION
+    ========================================= */
+    .hero {
+      width: 100%;
+      min-height: 100vh;
+      background: #f6f3eb;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Subtle decorative blobs */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -10%;
+      right: -8%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(190,141,70,0.10) 0%, transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -8%;
+      left: -5%;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(46,184,114,0.08) 0%, transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* =========================================
+       HERO GRID — two columns
+    ========================================= */
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 80px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    /* =========================================
+       LEFT COLUMN — content
+    ========================================= */
+    .hero-left { display: flex; flex-direction: column; gap: 0; }
+
+    /* Badge */
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(190,141,70,0.12);
+      border: 1px solid rgba(190,141,70,0.25);
+      padding: 7px 18px;
+      border-radius: 100px;
+      width: fit-content;
+      margin-bottom: 28px;
+    }
+    .pill-badge i { color: #be8d46; font-size: 13px; }
+    .pill-badge span {
+      color: #be8d46;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    /* Headline */
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 4.5vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      color: #0a241b;
+      letter-spacing: -0.025em;
+      margin-bottom: 24px;
+    }
+    .hero-headline .accent {
+      color: #2eb872;
+    }
+
+    /* Description */
+    .hero-desc {
+      font-size: 17px;
+      line-height: 1.75;
+      color: #5a6b61;
+      margin-bottom: 40px;
+      max-width: 480px;
+    }
+
+    /* Metric cards */
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .metric-card {
+      background: #ffffff;
+      border: 1px solid rgba(190,141,70,0.15);
+      border-radius: 20px;
+      padding: 20px 18px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .metric-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #2eb872, #be8d46);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+    .metric-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.09);
+      border-color: rgba(190,141,70,0.3);
+    }
+    .metric-card:hover::after { transform: scaleX(1); }
+
+    .metric-number {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+      font-weight: 800;
+      color: #163828;
+      margin-bottom: 6px;
+      line-height: 1;
+    }
+    .metric-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #8a9a8e;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      line-height: 1.4;
+    }
+
+    /* CTA Button */
+    .action-group { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 30px;
+      background: #163828;
+      color: #fff;
+      border-radius: 100px;
+      font-size: 15px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, gap 0.3s ease;
+      box-shadow: 0 8px 24px rgba(22,56,40,0.18);
+    }
+    .btn-primary:hover {
+      background: #0e2a1f;
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px rgba(22,56,40,0.28);
+      gap: 14px;
+    }
+
+    /* =========================================
+       RIGHT COLUMN — Swiper slider
+    ========================================= */
+    .hero-right {
+      width: 100%;
+      min-width: 0; /* prevent overflow */
+    }
+
+    .swiper-outer {
+      width: 100%;
+      border-radius: 32px;
+      overflow: hidden;
+    }
+
+    .healthSwiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide-card {
+      position: relative;
+      width: 100%;
+      border-radius: 32px;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .slide-card img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      display: block;
+      transition: transform 1.2s ease;
+    }
+
+    .slide-card:hover img {
+      transform: scale(1.06);
+    }
+
+    /* Dark gradient overlay */
+    .slide-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.82) 0%,
+        rgba(0,0,0,0.35) 45%,
+        rgba(0,0,0,0.05) 100%
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Glass panel */
+    .glass-panel {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      z-index: 2;
+      background: rgba(255,255,255,0.11);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 22px;
+      padding: 26px 28px;
+      transition: transform 0.4s ease;
+    }
+
+    .slide-card:hover .glass-panel {
+      transform: translateY(-6px);
+    }
+
+    .panel-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .panel-title i { color: #2eb872; font-size: 18px; flex-shrink: 0; }
+
+    .panel-desc {
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.92);
+    }
+    .panel-desc strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: #ffd86b;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    /* Swiper controls */
+    .healthSwiper .swiper-pagination {
+      bottom: 10px !important;
+    }
+    .healthSwiper .swiper-pagination-bullet {
+      width: 8px;
+      height: 8px;
+      background: rgba(255,255,255,0.5);
+      opacity: 1;
+      transition: all 0.3s ease;
+    }
+    .healthSwiper .swiper-pagination-bullet-active {
+      width: 28px;
+      border-radius: 100px;
+      background: #2eb872;
+    }
+
+    .healthSwiper .swiper-button-next,
+    .healthSwiper .swiper-button-prev {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(12px);
+      color: #fff;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .healthSwiper .swiper-button-next:hover,
+    .healthSwiper .swiper-button-prev:hover {
+      background: #2eb872;
+      transform: scale(1.08);
+    }
+    .healthSwiper .swiper-button-next::after,
+    .healthSwiper .swiper-button-prev::after {
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    /* Tablet landscape */
+    @media (max-width: 1100px) {
+      .hero-grid {
+        padding: 64px 36px;
+        gap: 40px;
+      }
+      .slide-card img { height: 480px; }
+    }
+
+    /* Tablet portrait — stack columns */
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        padding: 56px 28px;
+        gap: 48px;
+      }
+      .hero-desc { max-width: 100%; }
+      .hero-right {
+        max-width: 580px;
+        margin: 0 auto;
+        width: 100%;
+      }
+      .slide-card img { height: 440px; }
+      .metric-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* Mobile large */
+    @media (max-width: 640px) {
+      .hero-grid { padding: 48px 20px; gap: 36px; }
+      .metric-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .metric-card:last-child { grid-column: 1 / -1; }
+      .slide-card img { height: 380px; }
+      .glass-panel { left: 16px; right: 16px; bottom: 16px; padding: 18px 20px; }
+      .panel-title { font-size: 18px; }
+      .panel-desc { font-size: 13px; }
+      .healthSwiper .swiper-button-next,
+      .healthSwiper .swiper-button-prev { display: none; }
+    }
+
+    /* Mobile small */
+    @media (max-width: 440px) {
+      .hero-grid { padding: 40px 16px; }
+      .hero-headline { font-size: 2.2rem; }
+      .slide-card img { height: 300px; }
+      .glass-panel { left: 12px; right: 12px; bottom: 12px; padding: 14px 16px; border-radius: 16px; }
+      .panel-title { font-size: 15px; gap: 7px; margin-bottom: 6px; }
+      .panel-title i { font-size: 15px; }
+      .panel-desc { font-size: 12px; line-height: 1.55; }
+      .panel-desc strong { font-size: 11px; }
+      .swiper-outer { border-radius: 22px; }
+      .slide-card { border-radius: 22px; }
+    }
+
+    /* Very small */
+    @media (max-width: 360px) {
+      .slide-card img { height: 250px; }
+      .hero-headline { font-size: 1.9rem; }
+    }
+
+    /* =========================================
+       AOS overrides
+    ========================================= */
+    [data-aos] {
+      transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    }
+
+    #navbar:empty,
+    #footer:empty { display: none; }
+  </style>
+</head>
+<body>
+
+<div id="navbar"></div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-grid">
+
+    <!-- LEFT: Content -->
+    <div class="hero-left">
+
+      <div class="pill-badge" data-aos="fade-up" data-aos-duration="700">
+        <i class="fa-regular fa-heart"></i>
+        <span>Join Our Movement</span>
+      </div>
+
+      <h1 class="hero-headline" data-aos="fade-up" data-aos-delay="80" data-aos-duration="800">
+        Heal <span class="accent">Together</span>,<br>
+        Grow Together
+      </h1>
+
+      <p class="hero-desc" data-aos="fade-up" data-aos-delay="160" data-aos-duration="800">
+        Sutra Health is more than a clinic — it's a living movement. Join our Faridabad-based tribe of
+        volunteers running free yoga and health camps for healthier, happier communities across India.
+      </p>
+
+      <div class="metric-grid" data-aos="fade-up" data-aos-delay="240" data-aos-duration="800">
+        <div class="metric-card">
+          <div class="metric-number">12+</div>
+          <div class="metric-label">Volunteers</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">3</div>
+          <div class="metric-label">Cities Reached</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">Weekly</div>
+          <div class="metric-label">Free Rooftop Yoga — Sundays</div>
+        </div>
+      </div>
+
+      <div class="action-group" data-aos="fade-up" data-aos-delay="320" data-aos-duration="800">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdtgQtU1eIuwNpmgpOVOrIi_fZzHv5rOxiJe-sH_SG3NUTRiQ/viewform"
+           class="btn-primary">
+          Volunteer With Us <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Slider -->
+    <div class="hero-right" data-aos="fade-left" data-aos-delay="100" data-aos-duration="900">
+      <div class="swiper-outer">
+        <div class="swiper healthSwiper">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="slide-card">
+                <img src="/images/cancerday.webp" alt="World Cancer Day 2026" loading="eager">
+                <div class="glass-panel">
+                  <div class="panel-title"><i class="fa-solid fa-ribbon"></i> World Cancer Day</div>
+                  <div class="panel-desc"><strong>4 February 2026</strong>Raising awareness about cancer prevention, early diagnosis and treatment worldwide.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="slide-card">
+                <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1400&auto=format&fit=crop" alt="World Tuberculosis Day" loading="lazy">
+                <div class="glass-panel">
+                  <div class="panel-title"><i class="fa-solid fa-lungs"></i> World TB Day</div>
+                  <div class="panel-desc"><strong>24 March 2026</strong>Ending tuberculosis through awareness, screening and quality healthcare.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="slide-card">
+                <img src="/images/world.png" alt="World Health Day" loading="lazy" style="object-fit: cover;">
+                <div class="glass-panel">
+                  <div class="panel-title"><i class="fa-solid fa-heart-pulse"></i> World Health Day</div>
+                  <div class="panel-desc"><strong>7 April 2026</strong>Promoting healthier lives and universal healthcare for everyone.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="slide-card">
+                <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=1400&auto=format&fit=crop" alt="World Asthma Day" loading="lazy">
+                <div class="glass-panel">
+                  <div class="panel-title"><i class="fa-solid fa-wind"></i> World Asthma Day</div>
+                  <div class="panel-desc"><strong>5 May 2026</strong>Improving asthma awareness and respiratory care globally.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="slide-card">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1400&auto=format&fit=crop" alt="World Hypertension Day" loading="lazy">
+                <div class="glass-panel">
+                  <div class="panel-title"><i class="fa-solid fa-heart-circle-check"></i> World Hypertension Day</div>
+                  <div class="panel-desc"><strong>17 May 2026</strong>Know your blood pressure and protect your heart.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="slide-card">
+                <img src="/images/Tobacco-Day.webp" alt="World No Tobacco Day" loading="lazy">
+                <div class="glass-panel">
+                  <div class="panel-title"><i class="fa-solid fa-ban-smoking"></i> World No Tobacco Day</div>
+                  <div class="panel-desc"><strong>31 May 2026</strong>Say no to tobacco for a healthier future.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="slide-card">
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1400&auto=format&fit=crop" alt="International Yoga Day" loading="lazy">
+                <div class="glass-panel">
+                  <div class="panel-title"><i class="fa-solid fa-person-praying"></i> International Yoga Day</div>
+                  <div class="panel-desc"><strong>21 June 2026</strong>Celebrate wellness through yoga, meditation and healthy living.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="slide-card">
+                <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=1400&auto=format&fit=crop" alt="World Hepatitis Day" loading="lazy">
+                <div class="glass-panel">
+                  <div class="panel-title"><i class="fa-solid fa-shield-virus"></i> World Hepatitis Day</div>
+                  <div class="panel-desc"><strong>28 July 2026</strong>Hepatitis prevention, testing and treatment awareness.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="slide-card">
+                <img src="/images/heart.webp" alt="World Heart Day" loading="lazy">
+                <div class="glass-panel">
+                  <div class="panel-title"><i class="fa-solid fa-heart"></i> World Heart Day</div>
+                  <div class="panel-desc"><strong>29 September 2026</strong>Keep your heart healthy with exercise and balanced nutrition.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="slide-card">
+                <img src="https://images.unsplash.com/photo-1493836512294-502baa1986e2?q=80&w=1400&auto=format&fit=crop" alt="World Mental Health Day" loading="lazy">
+                <div class="glass-panel">
+                  <div class="panel-title"><i class="fa-solid fa-brain"></i> World Mental Health Day</div>
+                  <div class="panel-desc"><strong>10 October 2026</strong>Mental wellness matters — for everyone, everywhere.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="slide-card">
+                <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=1400&auto=format&fit=crop" alt="World Diabetes Day" loading="lazy">
+                <div class="glass-panel">
+                  <div class="panel-title"><i class="fa-solid fa-droplet"></i> World Diabetes Day</div>
+                  <div class="panel-desc"><strong>14 November 2026</strong>Diabetes awareness, healthy diet and regular blood sugar monitoring.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="slide-card">
+                <img src="/images/aids.webp" alt="World AIDS Day" loading="lazy">
+                <div class="glass-panel">
+                  <div class="panel-title"><i class="fa-solid fa-ribbon"></i> World AIDS Day</div>
+                  <div class="panel-desc"><strong>1 December 2026</strong>End HIV stigma and support global awareness initiatives.</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div id="footer"></div>
+<script src="./js/include.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({ once: true, mirror: false, offset: 80, duration: 800, easing: 'ease-out-quad' });
+    new Swiper(".healthSwiper", {
+      loop: true,
+      speed: 900,
+      spaceBetween: 20,
+      centeredSlides: true,
+      grabCursor: true,
+      autoplay: { delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true },
+      pagination: { el: ".swiper-pagination", clickable: true },
+      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+      breakpoints: { 0: { spaceBetween: 10 }, 480: { spaceBetween: 12 }, 768: { spaceBetween: 16 }, 1024: { spaceBetween: 20 } }
+    });
+  });
+</script>
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-70BG55XT3Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-70BG55XT3Q');
+</script>
+
+<!-- JSON-LD Schemas -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["NGO", "MedicalBusiness"],
+  "@id": "https://lifequality.org.in/#organization",
+  "name": "Life Quality",
+  "alternateName": ["Sutra Health", "EQUAL Society - Effort For Quality of Life"],
+  "legalName": "Effort For Quality of Life (EQUAL) Society",
+  "url": "https://lifequality.org.in/",
+  "logo": "https://lifequality.org.in/assets/images/og-image.jpg",
+
+  "image": "https://lifequality.org.in/assets/images/og-image.jpg",
+  "description": "Life Quality (Sutra Health) is a Faridabad-based not-for-profit society helping people reverse chronic conditions such as obesity, hypertension, diabetes, migraine and joint pain through an evidence-based, 21-point integrative protocol combining Yoga therapy, nutrition, Ayurveda and modern medicine. Registered under the Societies Registration Act 1860, the organisation has supported over 1200 patients across 15 years of practice with a reported 98% success rate.",
+  "slogan": "Reverse Chronic Diseases Naturally",
+  "foundingDate": "1997-05-28",
+  "email": "info@lifequality.org.in",
+  "telephone": "+91-9013103676",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "House No. 229, Roof-Top, Sector 46",
+    "addressLocality": "Faridabad",
+    "addressRegion": "Haryana",
+    "postalCode": "121010",
+    "addressCountry": "IN"
+  },
+  "areaServed": { "@type": "Country", "name": "India" },
+  "knowsAbout": ["Integrative Lifestyle Medicine", "Yoga Therapy", "Pranayama", "Ayurveda", "Nutrition Counselling", "Chronic Disease Reversal", "Hypertension Management", "Diabetes Management"],
+  "medicalSpecialty": ["Lifestyle Medicine", "Integrative Medicine"],
+  "nonprofitStatus": "https://schema.org/NonprofitANBI",
+  "sameAs": [
+    "https://www.linkedin.com/in/equal-society-ngo",
+    "https://wa.me/919013103676",
+    "https://in.pinterest.com/equal_society/",
+    "mailto:equal.society@gmail.com",
+    "https://www.instagram.com/sutrahealth/",
+    "https://www.facebook.com/people/Sutrahealth-Equal/",
+    "https://www.youtube.com/@sutra-health",
+    "https://lifequality.org.in/airbnb.html",
+    "https://maps.app.goo.gl/Bso3TJCkvqDSLWKP9",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12975079/",
+    "https://zenodo.org/records/15814357",
+    "https://www.preprints.org/manuscript/202603.0183/"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "International Yoga Day Free Community Camp",
+  "description": "Free community yoga and wellness camp hosted by Sutra Health across major Indian cities to mark International Yoga Day.",
+  "startDate": "2026-06-21",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
+    "@type": "Place",
+    "name": "Sutra Health Community Camp Locations",
+    "address": { "@type": "PostalAddress", "addressLocality": "Faridabad", "addressRegion": "Haryana", "addressCountry": "IN" }
+  },
+  "organizer": { "@type": "Organization", "name": "Life Quality (Sutra Health)", "url": "https://lifequality.org.in/" },
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR", "availability": "https://schema.org/InStock" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lifequality.org.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Volunteer & Community", "item": "https://lifequality.org.in/heal-together.html" }
+  ]
+}
+</script>
+</body>
+</html>

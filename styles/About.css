@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap");
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'DM Sans', sans-serif;
+  background: #f8f7f2;
+  color: #111;
+}
+
+/* About Section */
+
+.about-section{
+  padding: 160px 20px 100px;
+}
+
+.about-container{
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+/* Image */
+
+.about-image{
+  position: relative;
+}
+
+.about-image img{
+  width: 100%;
+  border-radius: 30px;
+  display: block;
+}
+
+/* Floating Card */
+
+.floating-card{
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+
+  width: 230px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.small-text{
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #b8873a;
+  font-weight: 700;
+}
+
+.floating-card h4{
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* Content */
+
+.section-tag{
+  color: #b8873a;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.about-content h2{
+  margin-top: 20px;
+
+  font-size: clamp(36px,5vw,60px);
+  line-height: 1.2;
+
+  font-family: 'Playfair Display', serif;
+}
+
+.about-content p{
+  margin-top: 20px;
+
+  color: #666;
+  line-height: 1.8;
+}
+
+/* Features */
+
+.features-grid{
+  margin-top: 40px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.feature-box{
+  display: flex;
+  gap: 14px;
+}
+
+.icon-box{
+  width: 50px;
+  height: 50px;
+
+  background: rgba(26,61,43,0.08);
+
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+  .about-container{
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .about-section{
+    padding-top: 130px;
+  }
+
+  .features-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .floating-card{
+    position: relative;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    margin-top: 20px;
+  }
+
+}

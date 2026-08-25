@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sutra Health - Video Gallery</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+  .sh-gallery{
+    --sh-teal-900:#0b4a45;
+    --sh-teal-700:#0F766E;
+    --sh-teal-600:#128078;
+    --sh-teal-500:#1a9e94;
+    --sh-teal-100:#e6f4f2;
+    --sh-sand-50:#f6f8fa;
+    --sh-ink-900:#1c2b2a;
+    --sh-ink-500:#6b7c7a;
+    --sh-line:#e6ebe9;
+    --sh-amber:#f2a341;
+    --sh-gold:#d4af6a;
+
+    font-family:'Inter',sans-serif;
+    background:var(--sh-sand-50);
+    color:var(--sh-ink-900);
+    display:block;
+    width:100%;
+  }
+  .sh-gallery, .sh-gallery *{
+    box-sizing:border-box;
+  }
+  .sh-gallery p, .sh-gallery h1, .sh-gallery h2, .sh-gallery h3{
+    margin-top:50px;
+    padding:0;
+  }
+  .sh-gallery ol{ margin:0; }
+
+  /* ---------- HERO ---------- */
+  .sh-gallery .sh-hero{
+    background:
+      radial-gradient(circle at 15% 15%, rgba(212,175,106,0.20), transparent 45%),
+      radial-gradient(circle at 85% 25%, rgba(255,255,255,0.14), transparent 50%),
+      linear-gradient(135deg,var(--sh-teal-900) 0%, var(--sh-teal-700) 55%, var(--sh-teal-500) 100%);
+    color:#fff;
+    padding:76px 20px 68px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .sh-gallery .sh-hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size:36px 36px;
+    mask-image:radial-gradient(circle at 50% 0%, rgba(0,0,0,0.6), transparent 70%);
+  }
+  .sh-gallery .sh-hero-eyebrow{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:12.5px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--sh-gold);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+  .sh-gallery .sh-hero-eyebrow::before,
+  .sh-gallery .sh-hero-eyebrow::after{
+    content:"";
+    width:22px;
+    height:1px;
+    background:var(--sh-gold);
+    opacity:0.7;
+  }
+  .sh-gallery .sh-hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(32px,4.4vw,48px);
+    margin-top:0;
+    margin-bottom:14px;
+    letter-spacing:-0.01em;
+    position:relative;
+    color:#fff;
+    line-height:1.18;
+  }
+  .sh-gallery .sh-hero p.sh-hero-sub{
+    opacity:0.92;
+    font-size:17px;
+    position:relative;
+    color:#eafaf7;
+    max-width:560px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:0;
+    line-height:1.6;
+  }
+  .sh-gallery .sh-hero-actions{
+    position:relative;
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .sh-gallery .sh-drive-link{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    background:rgba(255,255,255,0.97);
+    color:var(--sh-teal-800,var(--sh-teal-900));
+    font-weight:600;
+    font-size:14.5px;
+    padding:12px 22px;
+    border-radius:999px;
+    text-decoration:none;
+    box-shadow:0 8px 22px rgba(0,0,0,0.18);
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+  }
+  .sh-gallery .sh-drive-link:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 28px rgba(0,0,0,0.24);
+    background:#fff;
+  }
+  .sh-gallery .sh-drive-link svg{ flex-shrink:0; }
+
+  /* ---------- CONTAINER ---------- */
+  .sh-gallery .sh-container{
+    max-width:1240px;
+    margin:0 auto;
+    padding:54px 20px 64px;
+    width:100%;
+  }
+
+  .sh-gallery .sh-sync-bar{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    justify-content:center;
+    margin-bottom:40px;
+    font-size:14px;
+    color:var(--sh-ink-500);
+    flex-wrap:wrap;
+  }
+  .sh-gallery .sh-dot{
+    width:8px;height:8px;border-radius:50%;
+    background:#22c55e;
+    box-shadow:0 0 0 4px rgba(34,197,94,0.15);
+    flex-shrink:0;
+    display:inline-block;
+  }
+  .sh-gallery .sh-dot.loading{ background:var(--sh-amber); box-shadow:0 0 0 4px rgba(242,163,65,0.18); animation:sh-pulse 1.2s infinite; }
+  .sh-gallery .sh-dot.error{ background:#ef4444; box-shadow:0 0 0 4px rgba(239,68,68,0.15); }
+  @keyframes sh-pulse{ 0%,100%{opacity:1} 50%{opacity:.4} }
+  .sh-gallery .sh-refresh-btn{
+    border:1px solid var(--sh-line);
+    background:#fff;
+    color:var(--sh-teal-700);
+    font-weight:600;
+    font-size:13px;
+    padding:7px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    line-height:normal;
+    transition:background .15s ease, color .15s ease, box-shadow .15s ease;
+  }
+  .sh-gallery .sh-refresh-btn:hover{
+    background:var(--sh-teal-700);
+    color:#fff;
+    box-shadow:0 6px 16px rgba(15,118,110,0.25);
+  }
+
+  /* ---------- GRID ---------- */
+  .sh-gallery .sh-gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px;
+    width:100%;
+  }
+
+  .sh-gallery .sh-video-card{
+    background:#fff;
+    border-radius:20px;
+    padding:16px;
+    box-shadow:0 1px 2px rgba(15,118,110,0.04), 0 14px 32px rgba(15,118,110,0.09);
+    border:1px solid var(--sh-line);
+    transition:transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s ease, border-color .22s ease;
+  }
+  .sh-gallery .sh-video-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 1px 2px rgba(15,118,110,0.06), 0 24px 44px rgba(15,118,110,0.16);
+    border-color:rgba(15,118,110,0.25);
+  }
+  .sh-gallery .sh-video-card h3{
+    color:var(--sh-teal-900);
+    margin-top:4px;
+    margin-bottom:14px;
+    font-size:16px;
+    font-weight:600;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    letter-spacing:-0.01em;
+  }
+  .sh-gallery .sh-player{
+    border-radius:14px;
+    overflow:hidden;
+    background:#000;
+    aspect-ratio:16/9;
+    min-height:260px;
+    width:100%;
+    position:relative;
+    cursor:pointer;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,0.06);
+  }
+  .sh-gallery .sh-player iframe{
+    width:100%;
+    height:100%;
+    border:none;
+    display:block;
+    position:absolute;
+    inset:0;
+  }
+  .sh-gallery .sh-thumb{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    background:#0b1a19;
+    transition:transform .35s ease, filter .35s ease;
+  }
+  .sh-gallery .sh-player:hover .sh-thumb{
+    transform:scale(1.045);
+    filter:brightness(0.82);
+  }
+  .sh-gallery .sh-player::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.45) 100%);
+    pointer-events:none;
+  }
+  .sh-gallery .sh-play-btn{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.92);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:background .18s ease, transform .18s ease, box-shadow .18s ease;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    z-index:1;
+  }
+  .sh-gallery .sh-player:hover .sh-play-btn{
+    background:var(--sh-gold);
+    transform:translate(-50%,-50%) scale(1.1);
+    box-shadow:0 10px 26px rgba(212,175,106,0.45);
+  }
+  .sh-gallery .sh-play-btn::after{
+    content:"";
+    border-style:solid;
+    border-width:9px 0 9px 15px;
+    border-color:transparent transparent transparent var(--sh-teal-900);
+    margin-left:4px;
+    transition:border-color .18s ease;
+  }
+  .sh-gallery .sh-player:hover .sh-play-btn::after{
+    border-color:transparent transparent transparent #fff;
+  }
+
+  /* ---------- STATES ---------- */
+  .sh-gallery .sh-empty-state, .sh-gallery .sh-error-state{
+    grid-column:1/-1;
+    text-align:center;
+    padding:56px 24px;
+    color:var(--sh-ink-500);
+    background:#fff;
+    border:1px dashed var(--sh-line);
+    border-radius:18px;
+    font-size:15px;
+    line-height:1.7;
+  }
+  .sh-gallery .sh-error-state{ color:#b91c1c; border-color:#fecaca; background:#fef2f2; }
+
+  /* ---------- SETUP NOTE ---------- */
+  .sh-gallery .sh-setup-note{
+    max-width:1240px;
+    margin:0 auto 10px;
+    padding:0 20px;
+  }
+  .sh-gallery .sh-setup-note details{
+    background:#fff;
+    border:1px solid var(--sh-line);
+    border-radius:16px;
+    padding:16px 20px;
+    box-shadow:0 6px 18px rgba(15,118,110,0.05);
+  }
+  .sh-gallery .sh-setup-note summary{
+    cursor:pointer;
+    font-weight:600;
+    color:var(--sh-teal-700);
+    font-size:14px;
+  }
+  .sh-gallery .sh-setup-note .sh-content{
+    margin-top:12px;
+    font-size:13.5px;
+    color:#374151;
+    line-height:1.7;
+  }
+  .sh-gallery .sh-setup-note code{
+    background:var(--sh-teal-100);
+    padding:2px 6px;
+    border-radius:5px;
+    font-size:12.5px;
+  }
+  .sh-gallery .sh-setup-note ol{ padding-left:20px; margin-top:6px; }
+
+  @media(max-width:640px){
+    .sh-gallery .sh-hero{ padding:52px 20px 44px; }
+    .sh-gallery .sh-hero h1{ font-size:28px; }
+    .sh-gallery .sh-gallery-grid{ grid-template-columns:1fr; }
+    .sh-gallery .sh-container{ padding:38px 16px 44px; }
+    .sh-gallery .sh-player{ min-height:200px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Your site navbar include goes here -->
+<div id="navbar"></div>
+
+<div class="sh-gallery">
+
+  <section class="sh-hero">
+    <span class="sh-hero-eyebrow">Sutra Health</span>
+    <h1>Video Gallery</h1>
+    <p class="sh-hero-sub">Watch our wellness and lifestyle programs directly on our website — synced automatically from Google Drive.</p>
+    <div class="sh-hero-actions">
+      <a href="https://drive.google.com/drive/folders/1oDifbKwcO-5z_CbQqxKTBgMu_25NCQch">
+      <a class="sh-drive-link" id="shDriveFolderLink" href="#" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 87.3 78" xmlns="http://www.w3.org/2000/svg">
+          <path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z" fill="#0066da"/>
+          <path d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44a9.06 9.06 0 0 0 -1.2 4.5h27.5z" fill="#00ac47"/>
+          <path d="m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.502l5.852 11.5z" fill="#ea4335"/>
+          <path d="m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z" fill="#00832d"/>
+          <path d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z" fill="#2684fc"/>
+          <path d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 28h27.45c0-1.55-.4-3.1-1.2-4.5z" fill="#ffba00"/>
+        </svg>
+        Open Folder on Google Drive
+      </a>
+      </a>
+    </div>
+  </section>
+  <div class="sh-container">
+    <div class="sh-sync-bar">
+      <span class="sh-dot loading" id="shSyncDot"></span>
+      <span id="shSyncText">Connecting to Google Drive…</span>
+      <button class="sh-refresh-btn" id="shRefreshBtn">↻ Refresh</button>
+    </div>
+
+    <div class="sh-gallery-grid" id="shGalleryGrid">
+      <!-- Videos are injected here automatically from Google Drive -->
+    </div>
+  </div>
+
+</div><!-- /.sh-gallery -->
+
+<!-- Your site footer include goes here -->
+<div id="footer"></div>
+<script src="/js/include.js"></script>
+
+<script>
+  (function(){
+    // ======== CONFIGURE THESE TWO VALUES ========
+    const FOLDER_ID = "1HUhNDmIF3s3P38-4p1NNaqqi1QCE3bzu";
+    const API_KEY   = "AIzaSyDFr5P9JvSrefB8BmFFibvyP9ZUPOJDXnY";
+    // =============================================
+
+    const grid = document.getElementById('shGalleryGrid');
+    const dot = document.getElementById('shSyncDot');
+    const text = document.getElementById('shSyncText');
+    const driveLink = document.getElementById('shDriveFolderLink');
+
+    // Direct link to the Google Drive folder itself (separate from the auto-synced cards)
+    driveLink.href = `https://drive.google.com/drive/folders/${FOLDER_ID}`;
+
+    function setStatus(state, message){
+      dot.className = 'sh-dot ' + (state || '');
+      text.textContent = message;
+    }
+
+    function renderVideos(files){
+      grid.innerHTML = '';
+      if(!files.length){
+        grid.innerHTML = `<div class="sh-empty-state">Is folder mein abhi koi video nahi mili.<br>Google Drive folder mein video upload karein — yeh yahan apne aap dikh jayegi.</div>`;
+        return;
+      }
+      files.forEach((file) => {
+        const card = document.createElement('div');
+        card.className = 'sh-video-card';
+        card.innerHTML = `
+          <h3>${file.name.replace(/\.[^/.]+$/, "")}</h3>
+          <div class="sh-player" data-id="${file.id}">
+            <img class="sh-thumb" src="https://drive.google.com/thumbnail?id=${file.id}&sz=w640" loading="lazy" alt="${file.name}">
+            <div class="sh-play-btn"></div>
+          </div>`;
+        grid.appendChild(card);
+      });
+
+      // Load the actual video only when its thumbnail is clicked — keeps initial page load fast
+      grid.querySelectorAll('.sh-player').forEach(player => {
+        player.addEventListener('click', function(){
+          const id = this.dataset.id;
+          this.innerHTML = `<iframe src="https://drive.google.com/file/d/${id}/preview" allow="autoplay" loading="lazy"></iframe>`;
+        }, { once:true });
+      });
+    }
+
+    async function loadVideos(){
+      if(FOLDER_ID.startsWith("PASTE_") || API_KEY.startsWith("PASTE_")){
+        setStatus('error', 'Setup baaki hai — upar "One-time setup" section kholein');
+        grid.innerHTML = `<div class="sh-error-state">
+          Auto-sync abhi active nahi hai.<br>
+          Page ke top par "⚙️ One-time setup" section kholiye aur apna Google Drive <strong>Folder ID</strong> aur <strong>API Key</strong> daaliye.
+        </div>`;
+        return;
+      }
+
+      setStatus('loading', 'Fetching latest videos…');
+      try{
+        const q = encodeURIComponent(`'${FOLDER_ID}' in parents and mimeType contains 'video/' and trashed = false`);
+        const url = `https://www.googleapis.com/drive/v3/files?q=${q}&fields=files(id,name,createdTime)&orderBy=createdTime desc&key=${API_KEY}`;
+        const res = await fetch(url);
+        if(!res.ok) throw new Error('Drive API error ' + res.status);
+        const data = await res.json();
+        renderVideos(data.files || []);
+        setStatus('', `Synced — ${(data.files||[]).length} video(s) loaded`);
+      }catch(err){
+        setStatus('error', 'Sync failed — check Folder ID / API Key / sharing settings');
+        grid.innerHTML = `<div class="sh-error-state">
+          Videos load nahi ho payi. In cheezon ko check karein:<br>
+          • Folder ID aur API Key sahi hai<br>
+          • Folder "Anyone with the link" par share hai<br>
+          • Google Cloud Console mein Drive API enable hai
+        </div>`;
+      }
+    }
+
+    document.getElementById('shRefreshBtn').addEventListener('click', loadVideos);
+    loadVideos();
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,457 @@
+:root{
+  --primary:#0d1f1d;
+  --secondary:#c9a86a;
+  --secondary-light:#e5c996;
+  --bg:#f8f6f2;
+  --white:#ffffff;
+  --text:#2b3434;
+
+  --shadow-sm:0 5px 20px rgba(0,0,0,.05);
+  --shadow-md:0 15px 40px rgba(0,0,0,.08);
+
+  --radius:28px;
+  --transition:.4s ease;
+
+  /* Fluid type scale — keeps text readable from small phones to large desktops
+     without needing extra breakpoints for font-size alone */
+  --fs-h1:clamp(2.4rem,6vw + 1rem,6rem);
+  --fs-h2:clamp(2rem,4vw + .5rem,3.8rem);
+  --fs-h3:clamp(1.6rem,2.2vw + 1rem,2.6rem);
+  --fs-lead:clamp(1rem,1.2vw + .6rem,1.3rem);
+  --fs-body:clamp(.95rem,.4vw + .85rem,1.05rem);
+  --fs-small:clamp(.85rem,.3vw + .8rem,.95rem);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  /* Prevents iOS Safari from auto-inflating text and breaking the fluid scale */
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  line-height:1.7;
+  font-size:var(--fs-body);
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+}
+
+.yoga-container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
+
+section{
+  padding:clamp(60px,9vw,100px) 0;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.yoga-hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+
+  background:
+  linear-gradient(rgba(8,15,14,.82),rgba(8,15,14,.82)),
+  url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2000');
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  padding:40px 20px;
+}
+
+.yoga-hero .yoga-container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.yoga-hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:var(--fs-h1);
+  color:#fff;
+  line-height:1.1;
+  margin-bottom:20px;
+}
+
+.yoga-hero > .yoga-container > p{
+  color:#eee;
+  font-size:var(--fs-lead);
+  max-width:700px;
+  margin:0 auto 30px;
+  line-height:1.8;
+}
+
+.yoga-mantra{
+  width:min(100%,700px);
+  margin:0 auto;
+  padding:35px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+
+  border-radius:30px;
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,.15);
+}
+
+.yoga-mantra p{
+  color:#fff;
+  font-size:var(--fs-lead);
+  line-height:1.9;
+  margin:4px 0;
+  font-weight:500;
+}
+
+h1{
+  text-align:center;
+  margin-bottom:20px;
+  color:#15803d;
+}
+
+@media (max-width:768px){
+
+  .yoga-hero{
+    min-height:auto;
+    padding:80px 20px;
+  }
+
+  .yoga-mantra{
+    padding:25px 20px;
+  }
+
+  .yoga-mantra p{
+    line-height:1.8;
+  }
+}
+
+@media (max-width:480px){
+
+  .yoga-hero{
+    padding:70px 15px;
+  }
+
+  .yoga-mantra{
+    padding:20px 15px;
+    border-radius:20px;
+  }
+}
+
+/* =========================================================
+   SECTION TITLES & CARDS
+   ========================================================= */
+
+.yoga-section-title{
+  text-align:center;
+  margin-bottom:clamp(36px,6vw,60px);
+}
+
+.yoga-section-title h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:var(--fs-h2);
+  color:var(--primary);
+  margin-bottom:10px;
+}
+
+.yoga-section-title p{
+  color:#666;
+  font-size:var(--fs-lead);
+}
+
+.yoga-card{
+  background:#fff;
+  padding:clamp(20px,4vw,40px);
+  border-radius:30px;
+  box-shadow:var(--shadow-md);
+  transition:var(--transition);
+}
+
+.yoga-card:hover{
+  transform:translateY(-8px);
+}
+
+.yoga-card ul{
+  padding-left:20px;
+}
+
+.yoga-card li{
+  margin-bottom:15px;
+  font-size:var(--fs-body);
+}
+
+.yoga-bg-light{
+  background:#fff;
+}
+
+.yoga-video-link{
+  display:inline-block;
+  padding:12px 20px;
+  margin:0 10px 10px 0;
+  background:#2eb872;
+  color:#fff;
+  border-radius:10px;
+  font-weight:600;
+  font-size:var(--fs-small);
+  transition:.3s ease;
+}
+
+.yoga-video-link:last-child{
+  margin-right:0;
+}
+
+.yoga-video-link:hover{
+  background:#19723e;
+  transform:translateY(-2px);
+}
+
+.yoga-video-link--disabled{
+  background:#d7d2c8;
+  color:#7a7468;
+  cursor:not-allowed;
+  pointer-events:none;
+}
+
+.yoga-video-link--disabled:hover{
+  transform:none;
+}
+
+/* =========================================================
+   ASANA SEQUENCE — alternating left/right rows
+   ========================================================= */
+
+.asana-list{
+  display:flex;
+  flex-direction:column;
+  gap:clamp(40px,6vw,70px);
+}
+
+.asana-row{
+  display:flex;
+  align-items:center;
+  gap:clamp(24px,4vw,60px);
+}
+
+.asana-row--reverse{
+  flex-direction:row-reverse;
+}
+
+.asana-row-media{
+  position:relative;
+  flex:1 1 46%;
+  min-width:0;
+  aspect-ratio:16/9;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow-md);
+  background:var(--primary);
+}
+
+.asana-row-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.6s ease;
+}
+
+.asana-row:hover .asana-row-media img{
+  transform:scale(1.06);
+}
+
+.asana-row-media--placeholder{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,var(--primary),#1c3833);
+}
+
+.asana-placeholder-symbol{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.5rem,6vw,6rem);
+  color:var(--secondary-light);
+  opacity:.85;
+}
+
+/* Embedded YouTube / native video player inside an asana-row-media */
+.asana-video-frame{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+}
+
+.asana-video-frame iframe,
+.asana-video-frame video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+
+.asana-badge{
+  position:absolute;
+  top:20px;
+  left:20px;
+  z-index:2;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--primary);
+  color:var(--secondary-light);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:700;
+  font-size:1.15rem;
+  border:2px solid var(--secondary);
+  box-shadow:var(--shadow-sm);
+  pointer-events:none;
+}
+
+.asana-row-content{
+  flex:1 1 54%;
+  min-width:0;
+}
+
+.asana-eyebrow{
+  display:inline-block;
+  padding:6px 16px;
+  margin-bottom:16px;
+  border-radius:999px;
+  background:rgba(201,168,106,.15);
+  color:var(--secondary);
+  font-size:var(--fs-small);
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.asana-row-content h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:var(--fs-h3);
+  color:var(--primary);
+  margin-bottom:16px;
+}
+
+.asana-row-content p{
+  color:#666;
+  font-size:var(--fs-body);
+  margin-bottom:24px;
+  max-width:480px;
+}
+
+@media (max-width:992px){
+
+  .yoga-card{
+    padding:30px;
+  }
+}
+
+@media (max-width:768px){
+
+  .yoga-hero{
+    min-height:85vh;
+    padding:40px 20px;
+  }
+
+  .yoga-mantra{
+    padding:25px;
+  }
+
+  .asana-row,
+  .asana-row--reverse{
+    flex-direction:column;
+    gap:24px;
+  }
+
+  .asana-row-media{
+    width:100%;
+    flex:none;
+    aspect-ratio:16/9;
+  }
+
+  .asana-row-content{
+    flex:none;
+    text-align:left;
+  }
+
+  .asana-row-content p{
+    max-width:none;
+  }
+
+  .yoga-video-link{
+    display:block;
+    width:100%;
+    text-align:center;
+    margin:0 0 10px 0;
+  }
+}
+
+@media (max-width:480px){
+
+  .yoga-container{
+    width:94%;
+  }
+
+  .yoga-card{
+    padding:20px;
+  }
+
+  .asana-badge{
+    width:38px;
+    height:38px;
+    font-size:1rem;
+    top:14px;
+    left:14px;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion:reduce){
+  html{
+    scroll-behavior:auto;
+  }
+  .yoga-card,
+  .asana-row-media img,
+  .yoga-video-link{
+    transition:none !important;
+  }
+  .yoga-card:hover,
+  .asana-row:hover .asana-row-media img,
+  .yoga-video-link:hover{
+    transform:none !important;
+  }
+}

@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>21 Point Lifestyle Questionnaire</title>
+<meta name="google-site-verification" content="YB30kQv11tWVKTi5jzv4woqVbUDmAkWP4CXK8nVGAKw" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://lifequality.org.in/score.html">
+
+<meta name="robots" content="index,follow">
+
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+<meta name="author" content="Life Quality">
+
+<meta name="theme-color" content="#2E7D32">
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f4f7f9;
+    color:#1f2937;
+}
+
+/* ===========================
+   Questionnaire Section
+=========================== */
+
+.lifestyle-score-section{
+    padding:120px 20px 80px;
+}
+
+.lifestyle-score-wrapper{
+    max-width:900px;
+    margin:0 auto;
+    background:#ffffff;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.lifestyle-score-title{
+    text-align:center;
+    color:#0b5d4b;
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:35px;
+}
+
+.lifestyle-question-item{
+    padding:18px 0;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.lifestyle-question-item:last-child{
+    border-bottom:none;
+}
+
+.lifestyle-question-title{
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:12px;
+    line-height:1.5;
+}
+
+.lifestyle-question-options{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.lifestyle-question-options label{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.lifestyle-question-options input[type="radio"]{
+    width:18px;
+    height:18px;
+    accent-color:#0b5d4b;
+}
+
+.lifestyle-score-btn{
+    width:100%;
+    border:none;
+    padding:16px;
+    margin-top:30px;
+    background:#0b5d4b;
+    color:#fff;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.lifestyle-score-btn:hover{
+    background:#084638;
+}
+
+.lifestyle-score-result{
+    margin-top:20px;
+    padding:20px;
+    border-radius:12px;
+    background:#ecfdf5;
+    border:1px solid #a7f3d0;
+    text-align:center;
+    font-size:24px;
+    font-weight:700;
+    color:#065f46;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .lifestyle-score-section{
+        padding:100px 15px 60px;
+    }
+
+    .lifestyle-score-wrapper{
+        padding:25px;
+    }
+
+    .lifestyle-score-title{
+        font-size:24px;
+    }
+
+    .lifestyle-question-title{
+        font-size:15px;
+    }
+
+    .lifestyle-question-options{
+        gap:15px;
+    }
+
+    .lifestyle-score-result{
+        font-size:20px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<div id="navbar"></div>
+
+<section class="lifestyle-score-section">
+
+  <div class="lifestyle-score-wrapper">
+
+    <h1 class="lifestyle-score-title">
+      21 Point Lifestyle Questionnaire
+    </h1>
+
+    <div id="questions"></div>
+
+    <button class="lifestyle-score-btn" onclick="calculateScore()">
+      Calculate Score
+    </button>
+
+    <div class="lifestyle-score-result" id="result">
+      Total Score: 0 / 21
+    </div>
+
+  </div>
+
+</section>
+<div class="cc-license">
+  <p>
+    © 2026 Equal Society.
+    This work is licensed under the
+    <a href="https://creativecommons.org/licenses/by/4.0/"
+       target="_blank"
+       rel="license noopener noreferrer">
+      Creative Commons Attribution 4.0 International (CC BY 4.0)
+    </a>.
+  </p>
+</div>
+
+
+
+
+<!-- Footer Include -->
+<div id="footer"></div>
+
+<script src="./js/include.js"></script>
+
+<script>
+
+const questions = [
+  "Deep fried foods – Fries, Pakoras, Samosa, Kachori etc. / डीप फ्राइड फूड्स – फ्राइज, पकोड़े, समोसा, कचौरी आदि",
+  
+  "Processed / Packaged food – Chips, Patties, Bread, Biscuits, Sauces / प्रोसेस्ड / पैकेज्ड फूड – चिप्स, पैटीज़, ब्रेड, बिस्किट, सॉस",
+  
+  "Confectionery – Sweets, Chocolates, Toffees, Cakes, Pastries, Ice-Cream / मिठाइयाँ – स्वीट्स, चॉकलेट, टॉफ़ी, केक, पेस्ट्री, आइसक्रीम",
+  
+  "Carbonated drinks – Soft drinks, Sodas / कार्बोनेटेड ड्रिंक्स – सॉफ्ट ड्रिंक्स, सोडा",
+  
+  "Caffeinated drinks – Tea and Coffee with Milk / कैफीन युक्त पेय – दूध वाली चाय और कॉफी",
+  
+  "Meat – Red Meat / मांस – रेड मीट",
+  
+  "Alcohol / शराब",
+  
+  "Vegetables – Seasonal and green leafy vegetables, salads, chutney / सब्जियाँ – मौसमी और हरी पत्तेदार सब्जियाँ, सलाद, चटनी",
+  
+  "Fruits – Seasonal fruits / फल – मौसमी फल",
+  
+  "Cereals – Whole wheat, parboiled rice, millets, fermented cereals / अनाज – साबुत गेहूं, उबला चावल, मोटे अनाज, फर्मेंटेड अनाज",
+  
+  "Pulses – Whole pulses, beans, sprouted lentils and gram / दालें – साबुत दालें, बीन्स, अंकुरित दाल और चना",
+  
+  "Dairy – Toned milk, curd, buttermilk / डेयरी – टोंड दूध, दही, छाछ",
+  
+  "Oils & Fats – Cook in little oil, steam or boil food, add ghee on top / तेल और वसा – कम तेल में पकाएँ, भाप या उबालकर पकाएँ, ऊपर से घी डालें",
+  
+  "Sugars – Jaggery, honey, dates, raisins (in moderation) / शक्कर – गुड़, शहद, खजूर, किशमिश (सीमित मात्रा में)",
+  
+  "Walk / Exercise / Yoga / Pranayama for at least 30 minutes daily / प्रतिदिन कम से कम 30 मिनट टहलना / व्यायाम / योग / प्राणायाम",
+  
+  "Daily Sun Exposure / प्रतिदिन धूप लेना",
+  
+  "Maintain Healthy Body Weight (BMI below 25) / स्वस्थ शरीर वजन बनाए रखें (BMI 25 से कम)",
+  
+  "Drink Adequate Water / पर्याप्त पानी पिएँ",
+  
+  "Live Stress-Free Life and Proper Sleep / तनावमुक्त जीवन और पर्याप्त नींद",
+  
+  "Abstain from Addiction (Tobacco, Alcohol, Drugs, Screen) / नशे से दूर रहें (तंबाकू, शराब, ड्रग्स, स्क्रीन)",
+  
+  "Meal Times Should Be Fixed. Avoid Overeating / भोजन का समय निश्चित रखें। अधिक खाने से बचें"
+];
+
+const questionContainer = document.getElementById("questions");
+
+questions.forEach((question, index) => {
+
+  let yesValue = 1;
+  let noValue = 0;
+  let yesChecked = "";
+  let noChecked = "checked";
+
+  // Questions 1-7: Reverse scoring
+  if (index < 7) {
+    yesValue = 0;
+    noValue = 1;
+    yesChecked = "checked";
+    noChecked = "";
+  }
+
+  questionContainer.innerHTML += `
+
+    <div class="lifestyle-question-item">
+
+      <div class="lifestyle-question-title">
+        ${index + 1}. ${question}
+      </div>
+
+      <div class="lifestyle-question-options">
+
+        <label>
+          <input
+            type="radio"
+            name="question${index}"
+            value="${yesValue}"
+            ${yesChecked}
+          >
+          Yes
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="question${index}"
+            value="${noValue}"
+            ${noChecked}
+          >
+          No
+        </label>
+
+      </div>
+
+    </div>
+
+  `;
+
+});
+
+function calculateScore() {
+
+  let totalScore = 0;
+
+  questions.forEach((question, index) => {
+
+    const selectedValue = document.querySelector(
+      `input[name="question${index}"]:checked`
+    ).value;
+
+    totalScore += parseInt(selectedValue);
+
+  });
+
+  document.getElementById("result").innerHTML =
+    `Total Score: ${totalScore} / 21`;
+
+}
+
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-70BG55XT3Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-70BG55XT3Q');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["NGO", "MedicalBusiness"],
+  "@id": "https://lifequality.org.in/#organization",
+  "name": "Life Quality",
+  "alternateName": ["Sutra Health", "EQUAL Society - Effort For Quality of Life"],
+  "legalName": "Effort For Quality of Life (EQUAL) Society",
+  "url": "https://lifequality.org.in/",
+  "logo": "https://lifequality.org.in/assets/images/og-image.jpg",
+  "image": "https://lifequality.org.in/assets/images/og-image.jpg",
+  "description": "Life Quality (Sutra Health) is a Faridabad-based not-for-profit society helping people reverse chronic conditions such as obesity, hypertension, diabetes, migraine and joint pain through an evidence-based, 21-point integrative protocol combining Yoga therapy, nutrition, Ayurveda and modern medicine. Registered under the Societies Registration Act 1860, the organisation has supported over 1200 patients across 15 years of practice with a reported 98% success rate.",
+  "slogan": "Reverse Chronic Diseases Naturally",
+  "foundingDate": "1997-05-28",
+  "email": "info@lifequality.org.in",
+  "telephone": "+91-9013103676",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "House No. 229, Roof-Top, Sector 46",
+    "addressLocality": "Faridabad",
+    "addressRegion": "Haryana",
+    "postalCode": "121010",
+    "addressCountry": "IN"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "knowsAbout": [
+    "Integrative Lifestyle Medicine",
+    "Yoga Therapy",
+    "Pranayama",
+    "Ayurveda",
+    "Nutrition Counselling",
+    "Chronic Disease Reversal",
+    "Hypertension Management",
+    "Diabetes Management"
+  ],
+  "medicalSpecialty": ["Lifestyle Medicine", "Integrative Medicine"],
+  "nonprofitStatus": "https://schema.org/NonprofitANBI",
+  "sameAs": [
+    "https://www.linkedin.com/in/equal-society-ngo",
+    "https://wa.me/919013103676",
+    "https://www.linkedin.com/in/equal-society-ngo",
+    "https://in.pinterest.com/equal_society/",
+    "mailto:equal.society@gmail.com",
+    "https://www.instagram.com/sutrahealth/",
+    "https://www.facebook.com/people/Sutrahealth-Equal/",
+    "https://www.youtube.com/@sutra-health",
+    "https://lifequality.org.in/airbnb.html",
+    "https://maps.app.goo.gl/Bso3TJCkvqDSLWKP9",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12975079/",
+    "https://zenodo.org/records/15814357",
+    "https://www.preprints.org/manuscript/202603.0183/"
+  ]
+}
+</script>
+</body>
+</html>
+

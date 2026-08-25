@@ -1,0 +1,13 @@
+*{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'DM Sans', sans-serif;
+      background:#f5f1e9;
+      color:#1d2a23;
+    }
+
+    

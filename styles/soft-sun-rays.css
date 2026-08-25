@@ -1,0 +1,541 @@
+:root{
+  /* ---- Palette: ashram green + antique gold + a single warm terracotta
+     accent (used only for the "bead" signature) so the page reads like a
+     Sivananda-style manuscript, not a generic wellness template. ---- */
+  --primary:#0d1f1d;
+  --primary-soft:#16302b;
+  --secondary:#c9a86a;
+  --secondary-light:#e5c996;
+  --accent:#b5502f;          /* sindoor/terracotta — sparingly, for the bead + focus states */
+  --bg:#f8f6f0;
+  --bg-warm:#f1ecdf;
+  --white:#ffffff;
+  --text:#26302c;
+  --text-muted:#5c665f;
+
+  --shadow-sm:0 5px 20px rgba(13,31,29,.06);
+  --shadow-md:0 20px 50px rgba(13,31,29,.10);
+  --shadow-gold:0 0 0 1px rgba(201,168,106,.35);
+
+  --radius:28px;
+  --radius-sm:14px;
+  --transition:.4s cubic-bezier(.22,.61,.36,1);
+
+  /* Fluid type scale */
+  --fs-h1:clamp(2.4rem,6vw + 1rem,6rem);
+  --fs-h2:clamp(2rem,4vw + .5rem,3.8rem);
+  --fs-h3:clamp(1.6rem,2.2vw + 1rem,2.6rem);
+  --fs-lead:clamp(1rem,1.2vw + .6rem,1.3rem);
+  --fs-body:clamp(.95rem,.4vw + .85rem,1.05rem);
+  --fs-small:clamp(.85rem,.3vw + .8rem,.95rem);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  line-height:1.7;
+  font-size:var(--fs-body);
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* Consistent, visible focus ring everywhere — no outline:none anywhere on this page */
+a:focus-visible,
+button:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+  border-radius:6px;
+}
+
+.yoga-container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
+
+section{
+  padding:clamp(60px,9vw,100px) 0;
+}
+
+/* Alternate section backgrounds get a faint rudraksha-style dot texture
+   instead of a flat fill, so the page has quiet material texture. */
+section:not(.yoga-hero){
+  background-color:var(--bg);
+  background-image:radial-gradient(rgba(13,31,29,.045) 1px, transparent 1px);
+  background-size:22px 22px;
+}
+
+section.yoga-bg-light{
+  background-color:var(--white);
+  background-image:radial-gradient(rgba(201,168,106,.12) 1px, transparent 1px);
+  background-size:22px 22px;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.yoga-hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+
+  background:
+  linear-gradient(rgba(8,15,14,.85),rgba(8,15,14,.78)),
+  url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2000');
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  padding:40px 20px;
+}
+
+/* A slow, quiet sun-disc behind the title — nods to Surya Namaskar
+   without literally illustrating a person. Purely decorative, so it's
+   marked aria-hidden in the markup if you add a wrapping span; if not,
+   it's harmless since it sits behind the text via z-index. */
+.yoga-hero::before{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:min(70vw,620px);
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(201,168,106,.16) 0%, rgba(201,168,106,0) 70%);
+  pointer-events:none;
+  z-index:0;
+}
+
+.yoga-hero .yoga-container{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.yoga-hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:600;
+  font-size:var(--fs-h1);
+  color:#fff;
+  line-height:1.1;
+  margin-bottom:20px;
+  letter-spacing:.01em;
+}
+
+.yoga-hero > .yoga-container > p{
+  color:#e9e5da;
+  font-size:var(--fs-lead);
+  max-width:700px;
+  margin:0 auto 30px;
+  line-height:1.8;
+}
+
+.yoga-mantra{
+  width:min(100%,700px);
+  margin:0 auto;
+  padding:35px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+
+  border-radius:30px;
+  background:rgba(255,255,255,.07);
+  backdrop-filter:blur(15px);
+  -webkit-backdrop-filter:blur(15px);
+  border:1px solid rgba(229,201,150,.25);
+}
+
+.yoga-mantra p{
+  color:var(--secondary-light);
+  font-family:'Cormorant Garamond',serif;
+  font-size:var(--fs-lead);
+  line-height:1.9;
+  margin:4px 0;
+  font-weight:500;
+}
+
+@media (max-width:768px){
+  .yoga-hero{
+    min-height:auto;
+    padding:80px 20px;
+  }
+  .yoga-mantra{
+    padding:25px 20px;
+  }
+  .yoga-mantra p{
+    line-height:1.8;
+  }
+}
+
+@media (max-width:480px){
+  .yoga-hero{
+    padding:70px 15px;
+  }
+  .yoga-mantra{
+    padding:20px 15px;
+    border-radius:20px;
+  }
+}
+
+/* =========================================================
+   SECTION TITLES & CARDS
+   ========================================================= */
+
+.yoga-section-title{
+  text-align:center;
+  margin-bottom:clamp(36px,6vw,60px);
+}
+
+.yoga-section-title h2{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:600;
+  font-size:var(--fs-h2);
+  color:var(--primary);
+  margin-bottom:10px;
+  position:relative;
+  display:inline-block;
+}
+
+/* A short gold rule under every heading — quiet, repeated, ties the
+   sections together like chapter marks in a manuscript. */
+.yoga-section-title h2::after{
+  content:"";
+  display:block;
+  width:56px;
+  height:2px;
+  margin:14px auto 0;
+  background:var(--secondary);
+}
+
+.yoga-section-title p{
+  color:var(--text-muted);
+  font-size:var(--fs-lead);
+}
+
+.yoga-card{
+  background:#fff;
+  padding:clamp(24px,4vw,44px);
+  border-radius:30px;
+  box-shadow:var(--shadow-md);
+  border-top:3px solid var(--secondary);
+  transition:transform var(--transition), box-shadow var(--transition);
+}
+
+.yoga-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 26px 60px rgba(13,31,29,.14);
+}
+
+.yoga-card ul{
+  padding-left:22px;
+  list-style:none;
+}
+
+.yoga-card li{
+  position:relative;
+  margin-bottom:15px;
+  padding-left:22px;
+  font-size:var(--fs-body);
+}
+
+.yoga-card li::before{
+  content:"॰";
+  position:absolute;
+  left:0;
+  top:-4px;
+  font-size:1.4em;
+  color:var(--secondary);
+  font-weight:700;
+}
+
+.yoga-bg-light{
+  background:#fff;
+}
+
+.yoga-video-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 22px;
+  margin:0 10px 10px 0;
+  background:var(--primary);
+  color:var(--secondary-light);
+  border-radius:10px;
+  font-weight:600;
+  font-size:var(--fs-small);
+  letter-spacing:.01em;
+  transition:background var(--transition), transform var(--transition);
+}
+
+.yoga-video-link:hover{
+  background:var(--primary-soft);
+  transform:translateY(-2px);
+  color:#fff;
+}
+
+.yoga-video-link--disabled{
+  background:#d7d2c8;
+  color:#7a7468;
+  cursor:not-allowed;
+  pointer-events:none;
+}
+
+.yoga-video-link--disabled:hover{
+  transform:none;
+}
+
+/* =========================================================
+   ASANA SEQUENCE — alternating left/right rows
+   ========================================================= */
+
+.asana-list{
+  display:flex;
+  flex-direction:column;
+  gap:clamp(40px,6vw,70px);
+}
+
+.asana-row{
+  display:flex;
+  align-items:center;
+  gap:clamp(24px,4vw,60px);
+}
+
+.asana-row--reverse{
+  flex-direction:row-reverse;
+}
+
+.asana-row-media{
+  position:relative;
+  flex:1 1 46%;
+  min-width:0;
+  aspect-ratio:16/9;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow-md);
+  background:var(--primary);
+}
+
+.asana-row-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .6s ease;
+}
+
+.asana-row:hover .asana-row-media img{
+  transform:scale(1.06);
+}
+
+.asana-row-media--placeholder{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,var(--primary),#1c3833);
+}
+
+.asana-placeholder-symbol{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.5rem,6vw,6rem);
+  color:var(--secondary-light);
+  opacity:.85;
+}
+
+/* Embedded YouTube / native video player inside an asana-row-media */
+.asana-video-frame{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+}
+
+.asana-video-frame iframe,
+.asana-video-frame video,
+.asana-row-media > iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+
+/* Badge doubles as a japa-mala "bead": a double gold ring around each
+   number, echoing the counted repetition of a yoga practice. This is the
+   one signature flourish on the page — everything else stays quiet. */
+.asana-badge{
+  position:absolute;
+  top:20px;
+  left:20px;
+  z-index:2;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--primary);
+  color:var(--secondary-light);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:700;
+  font-size:1.15rem;
+  border:2px solid var(--secondary);
+  box-shadow:
+    var(--shadow-sm),
+    0 0 0 4px rgba(201,168,106,.18);
+  pointer-events:none;
+}
+
+.asana-row-content{
+  flex:1 1 54%;
+  min-width:0;
+}
+
+.asana-eyebrow{
+  display:inline-block;
+  padding:6px 16px;
+  margin-bottom:16px;
+  border-radius:999px;
+  background:rgba(201,168,106,.15);
+  color:#8a6f3f;
+  font-size:var(--fs-small);
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.asana-row-content h3{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:600;
+  font-size:var(--fs-h3);
+  color:var(--primary);
+  margin-bottom:16px;
+}
+
+.asana-row-content p{
+  color:var(--text-muted);
+  font-size:var(--fs-body);
+  margin-bottom:24px;
+  max-width:480px;
+}
+
+/* Group the (sometimes 2) video links under a row so wrapping is even,
+   regardless of loose whitespace in the anchor text. */
+.asana-row-content{
+  display:flex;
+  flex-direction:column;
+}
+
+.asana-row-content > *:not(:last-child){
+  margin-bottom:0;
+}
+
+@media (max-width:992px){
+  .yoga-card{
+    padding:30px;
+  }
+}
+
+@media (max-width:768px){
+  .yoga-hero{
+    min-height:85vh;
+    padding:40px 20px;
+  }
+  .yoga-mantra{
+    padding:25px;
+  }
+  .asana-row,
+  .asana-row--reverse{
+    flex-direction:column;
+    gap:24px;
+  }
+  .asana-row-media{
+    width:100%;
+    flex:none;
+    aspect-ratio:16/9;
+  }
+  .asana-row-content{
+    flex:none;
+    text-align:left;
+  }
+  .asana-row-content p{
+    max-width:none;
+  }
+  .yoga-video-link{
+    display:flex;
+    width:100%;
+    justify-content:center;
+    text-align:center;
+    margin:0 0 10px 0;
+  }
+}
+
+@media (max-width:480px){
+  .yoga-container{
+    width:94%;
+  }
+  .yoga-card{
+    padding:20px;
+  }
+  .asana-badge{
+    width:38px;
+    height:38px;
+    font-size:1rem;
+    top:14px;
+    left:14px;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion:reduce){
+  html{
+    scroll-behavior:auto;
+  }
+  .yoga-hero::before{
+    display:none;
+  }
+  .yoga-card,
+  .asana-row-media img,
+  .yoga-video-link{
+    transition:none !important;
+  }
+  .yoga-card:hover,
+  .asana-row:hover .asana-row-media img,
+  .yoga-video-link:hover{
+    transform:none !important;
+  }
+}

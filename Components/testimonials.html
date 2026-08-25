@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ============ PRIMARY SEO META TAGS ============ -->
+    <title>Patient Reviews &amp; Testimonials | Life Quality (Sutra Health)</title>
+    <meta name="description" content="Read real Google reviews from patients who transformed their health through Yoga therapy, Ayurveda and integrative medicine at Life Quality (Sutra Health), Faridabad.">
+    <meta name="keywords" content="Sutra Health reviews, Life Quality patient reviews, Natural yoga therapy reviews Faridabad, Dr. Rakesh yoga reviews, integrative medicine testimonials">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <link rel="canonical" href="https://lifequality.org.in/reviews.html">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <meta name="author" content="Life Quality">
+    <meta name="theme-color" content="#2E7D32">
+    <meta name="google-site-verification" content="YB30kQv11tWVKTi5jzv4woqVbUDmAkWP4CXK8nVGAKw" />
+
+    <!-- ============ OPEN GRAPH (Facebook/WhatsApp/LinkedIn share) ============ -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Life Quality (Sutra Health)">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:title" content="Patient Reviews & Testimonials | Life Quality (Sutra Health)">
+    <meta property="og:description" content="Real experiences from patients who transformed their health through Natural Healing, Yoga and Integrative Medicine at Life Quality.">
+    <meta property="og:image" content="https://lifequality.org.in/assets/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://lifequality.org.in/reviews.html">
+
+    <!-- ============ TWITTER CARD ============ -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Patient Reviews & Testimonials | Life Quality (Sutra Health)">
+    <meta name="twitter:description" content="Real Google reviews from patients on Yoga therapy, Ayurveda and integrative medicine at Life Quality.">
+    <meta name="twitter:image" content="https://lifequality.org.in/assets/images/og-image.jpg">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://upload.wikimedia.org" crossorigin>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap">
+
+    <style>
+
+        .google-reviews{
+            background:
+                radial-gradient(circle at 15% 20%, rgba(46,184,114,.08), transparent 45%),
+                radial-gradient(circle at 85% 80%, rgba(253,186,18,.06), transparent 45%),
+                #FBF9F4;
+            padding:120px 0;
+            overflow:hidden;
+            position:relative;
+        }
+
+        .google-reviews::before{
+            content:'';
+            position:absolute;
+            width:500px;
+            height:500px;
+            background:rgba(46,184,114,.06);
+            border-radius:50%;
+            top:-200px;
+            left:-150px;
+            filter:blur(80px);
+        }
+
+        .google-reviews::after{
+            content:'';
+            position:absolute;
+            width:450px;
+            height:450px;
+            background:rgba(46,184,114,.04);
+            border-radius:50%;
+            bottom:-200px;
+            right:-150px;
+            filter:blur(80px);
+        }
+
+        .review-heading{
+            text-align:center;
+            max-width:850px;
+            margin:auto;
+            margin-bottom:80px;
+            padding:0 20px;
+            position:relative;
+            z-index:2;
+        }
+
+        .review-heading span{
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+            padding:12px 24px;
+            border-radius:50px;
+            background:rgba(17,74,48,.07);
+            border:1px solid rgba(17,74,48,.12);
+            color:hsl(148,32%,17%);
+            font-family:'DM Sans',sans-serif;
+            font-weight:600;
+            font-size:14px;
+            letter-spacing:.5px;
+            margin-bottom:24px;
+        }
+
+        .review-heading span i{
+            color:#4285F4;
+            font-size:15px;
+        }
+
+        .review-heading h2{
+            font-family:'Playfair Display',serif;
+            font-size:58px;
+            line-height:1.15;
+            font-weight:700;
+            color:hsl(148,32%,17%);
+            margin-bottom:18px;
+        }
+
+        .review-heading p{
+            font-family:'DM Sans',sans-serif;
+            font-size:18px;
+            line-height:1.9;
+            color:#667085;
+            max-width:680px;
+            margin:auto;
+        }
+
+        .slider{
+            width:100%;
+            overflow:hidden;
+            position:relative;
+        }
+
+        .fade-edge{
+            position:absolute;
+            top:0;
+            bottom:0;
+            width:140px;
+            z-index:3;
+            pointer-events:none;
+        }
+
+        .fade-left{
+            left:0;
+            background:linear-gradient(to right, #FBF9F4, rgba(251,249,244,0));
+        }
+
+        .fade-right{
+            right:0;
+            background:linear-gradient(to left, #FBF9F4, rgba(251,249,244,0));
+        }
+
+        .slide-track{
+            display:flex;
+            gap:30px;
+            width:max-content;
+            animation:scroll 70s linear infinite;
+            padding:10px;
+        }
+
+        .review-card{
+            min-width:380px;
+            max-width:380px;
+            min-height:290px;
+            display:flex;
+            flex-direction:column;
+            background:rgba(255,255,255,.85);
+            backdrop-filter:blur(18px);
+            border:1px solid rgba(255,255,255,.7);
+            border-radius:30px;
+            padding:35px;
+            box-shadow:
+            0 10px 40px rgba(0,0,0,.05),
+            0 25px 60px rgba(0,0,0,.04);
+            transition:.45s ease;
+            position:relative;
+        }
+
+        .quote-mark{
+            position:absolute;
+            top:26px;
+            right:28px;
+            font-size:34px;
+            color:rgba(46,184,114,.14);
+        }
+
+        .review-card:hover{
+            transform:translateY(-12px);
+            border-color:rgba(46,184,114,.35);
+            box-shadow:
+            0 20px 50px rgba(0,0,0,.08),
+            0 35px 80px rgba(0,0,0,.06);
+        }
+
+        .slide-track:hover{
+            animation-play-state:paused;
+        }
+
+        .top{
+            display:flex;
+            align-items:center;
+            gap:15px;
+            margin-bottom:22px;
+        }
+
+        .top .avatar{
+            position:relative;
+            flex-shrink:0;
+            width:48px;
+            height:48px;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:#fff;
+            font-family:'DM Sans',sans-serif;
+            font-weight:700;
+            font-size:18px;
+            letter-spacing:.3px;
+            box-shadow:0 6px 16px rgba(0,0,0,.12);
+            border:2px solid rgba(255,255,255,.9);
+        }
+
+        .top .g-badge{
+            position:absolute;
+            bottom:-3px;
+            right:-3px;
+            width:18px;
+            height:18px;
+            padding:3px;
+            border-radius:50%;
+            background:#fff;
+            box-shadow:0 2px 6px rgba(0,0,0,.18);
+        }
+
+        .top h4{
+            font-family:'DM Sans',sans-serif;
+            font-size:18px;
+            font-weight:700;
+            color:hsl(148,32%,17%);
+            margin-bottom:4px;
+        }
+
+        .top .meta{
+            font-size:13px;
+            color:#8a8f98;
+            font-family:'DM Sans',sans-serif;
+        }
+
+        .stars{
+            color:#FDBA12;
+            font-size:18px;
+            letter-spacing:3px;
+            margin-bottom:18px;
+        }
+
+        .review-card p{
+            font-family:'DM Sans',sans-serif;
+            color:#5c6670;
+            font-size:15.5px;
+            line-height:1.85;
+            flex-grow:1;
+        }
+
+        .translated{
+            display:inline-flex;
+            align-items:center;
+            gap:6px;
+            margin-top:16px;
+            font-family:'DM Sans',sans-serif;
+            font-size:12.5px;
+            font-style:italic;
+            color:#9aa1ab;
+        }
+
+        @keyframes scroll{
+            from{
+                transform:translateX(0);
+            }
+            to{
+                transform:translateX(-50%);
+            }
+        }
+
+        @media(max-width:992px){
+
+        .review-heading h2{
+            font-size:46px;
+        }
+
+        .review-card{
+            min-width:330px;
+            max-width:330px;
+        }
+
+        .fade-edge{
+            width:80px;
+        }
+
+        }
+
+        @media(max-width:768px){
+
+        .google-reviews{
+            padding:80px 0;
+        }
+
+        .review-heading{
+            margin-bottom:50px;
+        }
+
+        .review-heading h2{
+            font-size:34px;
+        }
+
+        .review-heading p{
+            font-size:16px;
+        }
+
+        .review-card{
+            min-width:290px;
+            max-width:290px;
+            min-height:260px;
+            padding:28px;
+        }
+
+        .fade-edge{
+            width:40px;
+        }
+
+        }
+
+        @media (prefers-reduced-motion: reduce){
+            .slide-track{
+                animation:none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="navbar"></div>
+<section class="google-reviews">
+
+    <div class="review-heading">
+        <span><i class="fa-brands fa-google" aria-hidden="true"></i> Google Reviews</span>
+        <h1>Trusted By Patients</h1>
+        <p>
+            Real experiences from patients who have transformed their health
+            through Natural Healing, Yoga and Integrative Medicine.
+        </p>
+    </div>
+
+    <div class="slider">
+        <div class="fade-edge fade-left"></div>
+        <div class="fade-edge fade-right"></div>
+
+        <div class="slide-track">
+
+            <!-- ===== SET A (real cards) ===== -->
+
+            <!-- CARD 1 -->
+            <div class="review-card">
+                <i class="fa-solid fa-quote-right quote-mark" aria-hidden="true"></i>
+                <div class="top">
+                    <div class="avatar" style="background:#114A30">R<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="" class="g-badge" width="18" height="18"></div>
+                    <div>
+                        <h4>Rahul Sharma</h4>
+                        <span class="meta">2 weeks ago</span>
+                    </div>
+                </div>
+                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p>
+                    Amazing consultation experience. The doctors patiently
+                    listened to my concerns and provided practical Natural
+                    solutions.
+                </p>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="review-card">
+                <i class="fa-solid fa-quote-right quote-mark" aria-hidden="true"></i>
+                <div class="top">
+                    <div class="avatar" style="background:#2EB872">P<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="" class="g-badge" width="18" height="18"></div>
+                    <div>
+                        <h4>Priya Verma</h4>
+                        <span class="meta">1 month ago</span>
+                    </div>
+                </div>
+                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p>
+                    Yoga therapy helped reduce my back pain significantly.
+                    Professional staff and peaceful environment.
+                </p>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="review-card">
+                <i class="fa-solid fa-quote-right quote-mark" aria-hidden="true"></i>
+                <div class="top">
+                    <div class="avatar" style="background:#C9A227">A<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="" class="g-badge" width="18" height="18"></div>
+                    <div>
+                        <h4>Ankit Mehta</h4>
+                        <span class="meta">3 weeks ago</span>
+                    </div>
+                </div>
+                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p>
+                    Highly recommend Sutra Health. The holistic treatment
+                    approach actually delivers long-term benefits.
+                </p>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="review-card">
+                <i class="fa-solid fa-quote-right quote-mark" aria-hidden="true"></i>
+                <div class="top">
+                    <div class="avatar" style="background:#8B5E3C">N<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="" class="g-badge" width="18" height="18"></div>
+                    <div>
+                        <h4>Neha Kapoor</h4>
+                        <span class="meta">4 weeks ago</span>
+                    </div>
+                </div>
+                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p>
+                    Meditation sessions transformed my daily routine.
+                    Stress levels are much lower now.
+                </p>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="review-card">
+                <i class="fa-solid fa-quote-right quote-mark" aria-hidden="true"></i>
+                <div class="top">
+                    <div class="avatar" style="background:#3E6B8A">P<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="" class="g-badge" width="18" height="18"></div>
+                    <div>
+                        <h4>Puneet Kulshrestha</h4>
+                        <span class="meta">Local Guide · 31 reviews · a year ago</span>
+                    </div>
+                </div>
+                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p>
+                    I had the pleasure of getting guidance from Dr. Rakesh, a humble
+                    therapeutic Yoga consultant who is an MBBS doctor as well. He
+                    guided me and my son through our Yoga journey with a smile on
+                    his face, and my 14-year-old son became an instant fan. Sessions
+                    are held on a terrace facing the Aravallis with cold, fresh
+                    breeze even today. Will come back again and again.
+                </p>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="review-card">
+                <i class="fa-solid fa-quote-right quote-mark" aria-hidden="true"></i>
+                <div class="top">
+                    <div class="avatar" style="background:#A34A28">A<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="" class="g-badge" width="18" height="18"></div>
+                    <div>
+                        <h4>Adheer Dixit</h4>
+                        <span class="meta">5 reviews · 7 photos · 6 months ago</span>
+                    </div>
+                </div>
+                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p>
+                    I stayed at Sutra Health with my family and it was the best
+                    decision we made. Every morning you can join yoga with
+                    Dr. Rakesh on the rooftop terrace as the sun rises. When my
+                    father needed a wheelchair, Dr. Rakesh personally arranged it
+                    within one phone call. A beautifully decorated stay with
+                    thoughtful little details everywhere.
+                </p>
+            </div>
+
+            <!-- CARD 7 -->
+            <div class="review-card">
+                <i class="fa-solid fa-quote-right quote-mark" aria-hidden="true"></i>
+                <div class="top">
+                    <div class="avatar" style="background:#114A30">S<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="" class="g-badge" width="18" height="18"></div>
+                    <div>
+                        <h4>Sumit Kashyap</h4>
+                        <span class="meta">1 review · a year ago</span>
+                    </div>
+                </div>
+                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p>
+                    Very good service at Sutra Health, full care given to
+                    patients — bahut accha laga. Thank you Sutra Health!
+                </p>
+            </div>
+
+            <!-- CARD 8 -->
+            <div class="review-card">
+                <i class="fa-solid fa-quote-right quote-mark" aria-hidden="true"></i>
+                <div class="top">
+                    <div class="avatar" style="background:#2EB872">A<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="" class="g-badge" width="18" height="18"></div>
+                    <div>
+                        <h4>Anil Passi</h4>
+                        <span class="meta">4 reviews · 1 photo · 5 months ago</span>
+                    </div>
+                </div>
+                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p>
+                    Excellent experience.
+                </p>
+            </div>
+
+            <!-- CARD 9 -->
+            <div class="review-card">
+                <i class="fa-solid fa-quote-right quote-mark" aria-hidden="true"></i>
+                <div class="top">
+                    <div class="avatar" style="background:#C9A227">A<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="" class="g-badge" width="18" height="18"></div>
+                    <div>
+                        <h4>Arpit Krishan</h4>
+                        <span class="meta">7 reviews · 7 photos · a year ago</span>
+                    </div>
+                </div>
+                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p>
+                    Mind blowing experience.
+                </p>
+            </div>
+
+            <!-- CARD 10 -->
+            <div class="review-card">
+                <i class="fa-solid fa-quote-right quote-mark" aria-hidden="true"></i>
+                <div class="top">
+                    <div class="avatar" style="background:#8B5E3C">F<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="" class="g-badge" width="18" height="18"></div>
+                    <div>
+                        <h4>Flor Riboldi</h4>
+                        <span class="meta">4 reviews · 8 photos · a year ago</span>
+                    </div>
+                </div>
+                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p>
+                    I'm from Argentina and had the privilege of staying at
+                    Dr. Rakesh's place, sharing yoga classes with him every
+                    morning on his terrace. A wonderful way to start the day —
+                    the terrace is spectacular and so are the classes. Highly
+                    recommend it!
+                </p>
+                <span class="translated"><i class="fa-solid fa-language" aria-hidden="true"></i> Translated from Spanish</span>
+            </div>
+
+            <!-- ===== SET B (exact duplicate of SET A for a seamless loop) ===== -->
+
+            <div class="review-card" aria-hidden="true">
+                <i class="fa-solid fa-quote-right quote-mark"></i>
+                <div class="top">
+                    <div class="avatar" style="background:#114A30">R<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="" class="g-badge" width="18" height="18"></div>
+                    <div>
+                        <h4>Rahul Sharma</h4>
+                        <span class="meta">2 weeks ago</span>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p>
+                    Amazing consultation experience. The doctors patiently
+                    listened to my concerns and provided practical Natural
+                    solutions.
+                </p>
+            </div>
+
+            <div class="review-card" aria-hidden="true">
+                <i class="fa-solid fa-quote-right quote-mark"></i>
+                <div class="top">
+                    <div class="avatar" style="background:#2EB872">P<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="" class="g-badge" width="18" height="18"></div>
+                    <div>
+                        <h4>Priya Verma</h4>
+                        <span class="meta">1 month ago</span>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p>
+                    Yoga therapy helped reduce my back pain significantly.
+                    Professional staff and peaceful environment.
+                </p>
+            </div>
+
+            <div class="review-card" aria-hidden="true">
+                <i class="fa-solid fa-quote-right quote-mark"></i>
+                <div class="top">
+                    <div class="avatar" style="background:#C9A227">A<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="" class="g-badge" width="18" height="18"></div>
+                    <div>
+                        <h4>Ankit Mehta</h4>
+                        <span class="meta">3 weeks ago</span>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p>
+                    Highly recommend Sutra Health. The holistic treatment
+                    approach actually delivers long-term benefits.
+                </p>
+            </div>
+
+            <div class="review-card" aria-hidden="true">
+                <i class="fa-solid fa-quote-right quote-mark"></i>
+                <div class="top">
+                    <div class="avatar" style="background:#8B5E3C">N<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="" class="g-badge" width="18" height="18"></div>
+                    <div>
+                        <h4>Neha Kapoor</h4>
+                        <span class="meta">4 weeks ago</span>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p>
+                    Meditation sessions transformed my daily routine.
+                    Stress levels are much lower now.
+                </p>
+            </div>
+
+            <div class="review-card" aria-hidden="true">
+                <i class="fa-solid fa-quote-right quote-mark"></i>
+                <div class="top">
+                    <div class="avatar" style="background:#3E6B8A">P<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="" class="g-badge" width="18" height="18"></div>
+                    <div>
+                        <h4>Puneet Kulshrestha</h4>
+                        <span class="meta">Local Guide · 31 reviews · a year ago</span>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p>
+                    I had the pleasure of getting guidance from Dr. Rakesh, a humble
+                    therapeutic Yoga consultant who is an MBBS doctor as well. He
+                    guided me and my son through our Yoga journey with a smile on
+                    his face, and my 14-year-old son became an instant fan. Sessions
+                    are held on a terrace facing the Aravallis with cold, fresh
+                    breeze even today. Will come back again and again.
+                </p>
+            </div>
+
+            <div class="review-card" aria-hidden="true">
+                <i class="fa-solid fa-quote-right quote-mark"></i>
+                <div class="top">
+                    <div class="avatar" style="background:#A34A28">A<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="" class="g-badge" width="18" height="18"></div>
+                    <div>
+                        <h4>Adheer Dixit</h4>
+                        <span class="meta">5 reviews · 7 photos · 6 months ago</span>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p>
+                    I stayed at Sutra Health with my family and it was the best
+                    decision we made. Every morning you can join yoga with
+                    Dr. Rakesh on the rooftop terrace as the sun rises. When my
+                    father needed a wheelchair, Dr. Rakesh personally arranged it
+                    within one phone call. A beautifully decorated stay with
+                    thoughtful little details everywhere.
+                </p>
+            </div>
+
+            <div class="review-card" aria-hidden="true">
+                <i class="fa-solid fa-quote-right quote-mark"></i>
+                <div class="top">
+                    <div class="avatar" style="background:#114A30">S<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="" class="g-badge" width="18" height="18"></div>
+                    <div>
+                        <h4>Sumit Kashyap</h4>
+                        <span class="meta">1 review · a year ago</span>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p>
+                    Very good service at Sutra Health, full care given to
+                    patients — bahut accha laga. Thank you Sutra Health!
+                </p>
+            </div>
+
+            <div class="review-card" aria-hidden="true">
+                <i class="fa-solid fa-quote-right quote-mark"></i>
+                <div class="top">
+                    <div class="avatar" style="background:#2EB872">A<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="" class="g-badge" width="18" height="18"></div>
+                    <div>
+                        <h4>Anil Passi</h4>
+                        <span class="meta">4 reviews · 1 photo · 5 months ago</span>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p>
+                    Excellent experience.
+                </p>
+            </div>
+
+            <div class="review-card" aria-hidden="true">
+                <i class="fa-solid fa-quote-right quote-mark"></i>
+                <div class="top">
+                    <div class="avatar" style="background:#C9A227">A<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="" class="g-badge" width="18" height="18"></div>
+                    <div>
+                        <h4>Arpit Krishan</h4>
+                        <span class="meta">7 reviews · 7 photos · a year ago</span>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p>
+                    Mind blowing experience.
+                </p>
+            </div>
+
+            <div class="review-card" aria-hidden="true">
+                <i class="fa-solid fa-quote-right quote-mark"></i>
+                <div class="top">
+                    <div class="avatar" style="background:#8B5E3C">F<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="" class="g-badge" width="18" height="18"></div>
+                    <div>
+                        <h4>Flor Riboldi</h4>
+                        <span class="meta">4 reviews · 8 photos · a year ago</span>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p>
+                    I'm from Argentina and had the privilege of staying at
+                    Dr. Rakesh's place, sharing yoga classes with him every
+                    morning on his terrace. A wonderful way to start the day —
+                    the terrace is spectacular and so are the classes. Highly
+                    recommend it!
+                </p>
+                <span class="translated"><i class="fa-solid fa-language"></i> Translated from Spanish</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<div id="footer"></div>
+
+<script src="../js/include.js" defer></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-70BG55XT3Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-70BG55XT3Q');
+</script>
+
+<!-- ============ ORGANIZATION SCHEMA (unchanged) ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["NGO", "MedicalBusiness"],
+  "@id": "https://lifequality.org.in/#organization",
+  "name": "Life Quality",
+  "alternateName": ["Sutra Health", "EQUAL Society - Effort For Quality of Life"],
+  "legalName": "Effort For Quality of Life (EQUAL) Society",
+  "url": "https://lifequality.org.in/",
+  "logo": "https://lifequality.org.in/assets/images/og-image.jpg",
+  "image": "https://lifequality.org.in/assets/images/og-image.jpg",
+  "description": "Life Quality (Sutra Health) is a Faridabad-based not-for-profit society helping people reverse chronic conditions such as obesity, hypertension, diabetes, migraine and joint pain through an evidence-based, 21-point integrative protocol combining Yoga therapy, nutrition, Ayurveda and modern medicine. Registered under the Societies Registration Act 1860, the organisation has supported over 1200 patients across 15 years of practice with a reported 98% success rate.",
+  "slogan": "Reverse Chronic Diseases Naturally",
+  "foundingDate": "1997-05-28",
+  "email": "info@lifequality.org.in",
+  "telephone": "+91-9013103676",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "House No. 229, Roof-Top, Sector 46",
+    "addressLocality": "Faridabad",
+    "addressRegion": "Haryana",
+    "postalCode": "121010",
+    "addressCountry": "IN"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "knowsAbout": [
+    "Integrative Lifestyle Medicine",
+    "Yoga Therapy",
+    "Pranayama",
+    "Ayurveda",
+    "Nutrition Counselling",
+    "Chronic Disease Reversal",
+    "Hypertension Management",
+    "Diabetes Management"
+  ],
+  "medicalSpecialty": ["Lifestyle Medicine", "Integrative Medicine"],
+  "nonprofitStatus": "https://schema.org/NonprofitANBI",
+  "sameAs": [
+    "https://www.linkedin.com/in/equal-society-ngo",
+    "https://wa.me/919013103676",
+    "https://in.pinterest.com/equal_society/",
+    "mailto:equal.society@gmail.com",
+    "https://www.instagram.com/sutrahealth/",
+    "https://www.facebook.com/people/Sutrahealth-Equal/",
+    "https://www.youtube.com/@sutra-health",
+    "https://lifequality.org.in/airbnb.html",
+    "https://maps.app.goo.gl/Bso3TJCkvqDSLWKP9",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12975079/",
+    "https://zenodo.org/records/15814357",
+    "https://www.preprints.org/manuscript/202603.0183/"
+  ]
+}
+</script>
+
+<!-- ============ SERVICE + REVIEW SCHEMA (FIXED) ============ -->
+<!--
+  ROOT CAUSE of "Invalid object type for field <parent_node>":
+  Google does NOT support "Service" as a parent type for Review/AggregateRating
+  rich results. Supported parent types include LocalBusiness, Organization,
+  Product, Event, Course, Recipe, SoftwareApplication, etc. — but not plain
+  "Service". Fix: declare the type as an array so it's BOTH Service (accurate
+  description) AND LocalBusiness (Google-supported parent for reviews).
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Service", "LocalBusiness"],
+  "name": "Yoga Therapy & Integrative Medicine Consultation",
+  "serviceType": "Yoga Therapy, Ayurveda & Integrative Medicine Consultation",
+  "provider": {
+    "@id": "https://lifequality.org.in/#organization"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Faridabad"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Rahul Sharma" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Amazing consultation experience. The doctors patiently listened to my concerns and provided practical Natural solutions."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Priya Verma" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Yoga therapy helped reduce my back pain significantly. Professional staff and peaceful environment."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Puneet Kulshrestha" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Guidance from Dr. Rakesh, a therapeutic Yoga consultant who is also an MBBS doctor. Sessions held on a terrace facing the Aravallis."
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "bestRating": "5",
+    "reviewCount": "10"
+  }
+}
+</script>
+
+<!-- ============ BREADCRUMB SCHEMA (new) ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://lifequality.org.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Patient Reviews",
+      "item": "https://lifequality.org.in/reviews.html"
+    }
+  ]
+}
+</script>
+
+</body>
+</html>

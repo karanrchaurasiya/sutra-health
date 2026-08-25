@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sutra Health Newsletter</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="google-site-verification" content="YB30kQv11tWVKTi5jzv4woqVbUDmAkWP4CXK8nVGAKw" />
+<link rel="canonical" href="https://lifequality.org.in/current-page.html">
+
+<meta name="robots" content="index,follow">
+
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+<meta name="author" content="Life Quality">
+
+<meta name="theme-color" content="#2E7D32">
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: transparent;
+      }
+
+      .card {
+        max-width: 430px;
+        margin: auto;
+        padding: 28px 24px;
+        border-radius: 14px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        font-family: "Source Sans 3", Arial, sans-serif;
+        background: #fff;
+      }
+
+      h2 {
+        font-family: "Merriweather", serif;
+        font-size: 22px;
+        color: #1f2937;
+        margin-bottom: 6px;
+      }
+
+      .subtitle {
+        font-size: 14px;
+        color: #6b7280;
+        margin-bottom: 22px;
+        line-height: 1.5;
+      }
+
+      .field {
+        margin-bottom: 14px;
+      }
+
+      label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: #374151;
+        margin-bottom: 6px;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 11px 12px;
+        border: 1.5px solid #d1d5db;
+        border-radius: 8px;
+        outline: none;
+        font-size: 14px;
+        font-family: inherit;
+        transition: border-color 0.2s;
+      }
+
+      input:focus,
+      select:focus {
+        border-color: #16a34a;
+      }
+
+      .consent {
+        font-size: 12px;
+        color: #9ca3af;
+        margin: 14px 0 18px;
+        line-height: 1.5;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        background: #16a34a;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 15px;
+        font-family: inherit;
+        cursor: pointer;
+        transition: background 0.2s, opacity 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      button:hover:not(:disabled) {
+        background: #15803d;
+      }
+
+      button:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+
+      .success-banner {
+        display: none;
+        align-items: center;
+        gap: 10px;
+        background: #f0fdf4;
+        border: 1.5px solid #bbf7d0;
+        border-radius: 10px;
+        padding: 14px 16px;
+        margin-top: 16px;
+        animation: fadeIn 0.4s ease;
+      }
+
+      .success-banner.show {
+        display: flex;
+      }
+
+      .success-icon {
+        width: 28px;
+        height: 28px;
+        background: #16a34a;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .success-icon svg {
+        width: 15px;
+        height: 15px;
+      }
+
+      .success-text strong {
+        display: block;
+        font-size: 14px;
+        color: #15803d;
+        font-weight: 700;
+        margin-bottom: 2px;
+      }
+
+      .success-text span {
+        font-size: 12px;
+        color: #4b7a5e;
+      }
+
+      .error-banner {
+        display: none;
+        background: #fef2f2;
+        border: 1.5px solid #fecaca;
+        border-radius: 10px;
+        padding: 10px 14px;
+        margin-top: 12px;
+        font-size: 13px;
+        color: #b91c1c;
+        animation: fadeIn 0.3s ease;
+      }
+
+      .error-banner.show {
+        display: block;
+      }
+
+      .spinner {
+        width: 16px;
+        height: 16px;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        border-top-color: white;
+        border-radius: 50%;
+        animation: spin 0.7s linear infinite;
+        display: none;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <h2>Sutra Health Newsletter</h2>
+
+      <p class="subtitle">
+        Subscribe to our newsletter to receive healthcare updates, wellness
+        tips, and the latest news from Sutra Health.
+      </p>
+
+      <div id="formWrap">
+        <div class="field">
+          <label for="name">Full Name *</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your full name"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="email">Email *</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="gender">Gender</label>
+          <select id="gender">
+            <option value="">Select gender</option>
+            <option>Female</option>
+            <option>Male</option>
+            <option>Other</option>
+            <option>Prefer not to say</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="age">Age</label>
+          <input
+            type="number"
+            id="age"
+            placeholder="Enter your age"
+            min="1"
+          />
+        </div>
+
+        <div class="field">
+          <label for="location">Location</label>
+          <input
+            type="text"
+            id="location"
+            placeholder="Enter your location"
+          />
+        </div>
+
+        <p class="consent">
+          By subscribing, you agree to receive emails from Sutra Health.
+        </p>
+
+        <button type="button" id="submitBtn" onclick="handleSubmit()">
+          <span id="btnText">Subscribe</span>
+          <span class="spinner" id="spinner"></span>
+        </button>
+
+        <div class="error-banner" id="errorBanner">
+          Something went wrong. Please try again.
+        </div>
+      </div>
+
+      <div class="success-banner" id="successBanner">
+        <div class="success-icon">
+          <svg
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 10l4 4 8-8"
+              stroke="white"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+
+        <div class="success-text">
+          <strong>Successfully subscribed!</strong>
+          <span>Welcome to the Sutra Health Newsletter.</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const SCRIPT_URL =
+    "YOUR_WEB_APP_URL";
+
+      async function handleSubmit() {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const gender = document.getElementById("gender").value;
+        const age = document.getElementById("age").value;
+        const location = document.getElementById("location").value.trim();
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!name) {
+          alert("Please enter your name");
+          return;
+        }
+
+        if (!email || !emailRegex.test(email)) {
+          alert("Please enter a valid email");
+          return;
+        }
+
+        const btn = document.getElementById("submitBtn");
+        const btnText = document.getElementById("btnText");
+        const spinner = document.getElementById("spinner");
+        const errorBanner = document.getElementById("errorBanner");
+
+        btn.disabled = true;
+        btnText.textContent = "Submitting...";
+        spinner.style.display = "block";
+        errorBanner.classList.remove("show");
+
+        try {
+          await fetch(SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name: name,
+              email: email,
+              gender: gender,
+              age: age,
+              location: location,
+              consent: true,
+            }),
+          });
+
+          document.getElementById("formWrap").style.display = "none";
+          document
+            .getElementById("successBanner")
+            .classList.add("show");
+        } catch (error) {
+          btn.disabled = false;
+          btnText.textContent = "Subscribe";
+          spinner.style.display = "none";
+          errorBanner.classList.add("show");
+        }
+      }
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          handleSubmit();
+        }
+      });
+    </script>
+  </body>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-70BG55XT3Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-70BG55XT3Q');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["NGO", "MedicalBusiness"],
+  "@id": "https://lifequality.org.in/#organization",
+  "name": "Life Quality",
+  "alternateName": ["Sutra Health", "EQUAL Society - Effort For Quality of Life"],
+  "legalName": "Effort For Quality of Life (EQUAL) Society",
+  "url": "https://lifequality.org.in/",
+  "logo": "https://lifequality.org.in/assets/images/og-image.jpg",
+  "image": "https://lifequality.org.in/assets/images/og-image.jpg",
+  "description": "Life Quality (Sutra Health) is a Faridabad-based not-for-profit society helping people reverse chronic conditions such as obesity, hypertension, diabetes, migraine and joint pain through an evidence-based, 21-point integrative protocol combining Yoga therapy, nutrition, Ayurveda and modern medicine. Registered under the Societies Registration Act 1860, the organisation has supported over 1200 patients across 15 years of practice with a reported 98% success rate.",
+  "slogan": "Reverse Chronic Diseases Naturally",
+  "foundingDate": "1997-05-28",
+  "email": "info@lifequality.org.in",
+  "telephone": "+91-9013103676",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "House No. 229, Roof-Top, Sector 46",
+    "addressLocality": "Faridabad",
+    "addressRegion": "Haryana",
+    "postalCode": "121010",
+    "addressCountry": "IN"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "knowsAbout": [
+    "Integrative Lifestyle Medicine",
+    "Yoga Therapy",
+    "Pranayama",
+    "Ayurveda",
+    "Nutrition Counselling",
+    "Chronic Disease Reversal",
+    "Hypertension Management",
+    "Diabetes Management"
+  ],
+  "medicalSpecialty": ["Lifestyle Medicine", "Integrative Medicine"],
+  "nonprofitStatus": "https://schema.org/NonprofitANBI",
+  "sameAs": [
+    "https://www.linkedin.com/in/equal-society-ngo",
+    "https://wa.me/919013103676",
+    "https://www.linkedin.com/in/equal-society-ngo",
+    "https://in.pinterest.com/equal_society/",
+    "mailto:equal.society@gmail.com",
+    "https://www.instagram.com/sutrahealth/",
+    "https://www.facebook.com/people/Sutrahealth-Equal/",
+    "https://www.youtube.com/@sutra-health",
+    "https://lifequality.org.in/airbnb.html",
+    "https://maps.app.goo.gl/Bso3TJCkvqDSLWKP9",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12975079/",
+    "https://zenodo.org/records/15814357",
+    "https://www.preprints.org/manuscript/202603.0183/"
+  ]
+}
+</script>
+</html>

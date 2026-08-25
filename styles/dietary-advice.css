@@ -1,0 +1,350 @@
+# dietary-advice.css
+
+```css
+/* =========================
+   RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:#f8f6f1;
+  color:#1E2A1C;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+.diet-intro{
+  text-align:center;
+  max-width:900px;
+  margin:0 auto 50px;
+}
+
+.diet-intro p{
+  font-size:18px;
+  line-height:1.8;
+  color:#333;
+  margin-bottom:15px;
+}
+
+.diet-intro a{
+  color:#0b4d43;
+  font-weight:600;
+  text-decoration:none;
+  border-bottom:2px solid #0b4d43;
+  transition:0.3s;
+}
+
+.diet-intro a:hover{
+  color:#146b5d;
+  border-color:#146b5d;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.diet-container{
+  width:90%;
+  max-width:1250px;
+  margin:auto;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.diet-hero{
+  min-height:85vh;
+
+  background:
+  linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.6)),
+  url('/images/diet.jpeg');
+
+  background-size:cover;
+  background-position:center;
+
+  display:flex;
+  align-items:center;
+
+  padding:160px 0 90px;
+}
+
+.hero-content{
+  max-width:760px;
+}
+
+.hero-content span{
+  display:inline-block;
+
+  padding:10px 22px;
+  border-radius:40px;
+
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.18);
+
+  color:#2eb872;
+  letter-spacing:2px;
+  font-size:14px;
+
+  margin-bottom:24px;
+}
+
+.hero-content h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(42px,7vw,78px);
+  line-height:1.1;
+  color:#fff;
+  margin-bottom:28px;
+}
+
+.hero-content p{
+  color:rgba(255,255,255,0.88);
+  font-size:1.1rem;
+  max-width:650px;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.diet-section{
+  padding:100px 0;
+}
+
+.alt-bg{
+  background:#F1EEE6;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.section-title h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(34px,5vw,54px);
+  margin-bottom:18px;
+  color:#1E2A1C;
+}
+
+.section-title p{
+  max-width:750px;
+  margin:auto;
+  color:#4d5b4a;
+  font-size:1.05rem;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.diet-card{
+  background:#fff;
+  padding:40px;
+  border-radius:28px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.06);
+}
+
+.diet-card h3{
+  font-size:2rem;
+  margin-bottom:22px;
+  font-family:'Playfair Display',serif;
+  color:#1E2A1C;
+}
+
+.diet-card p{
+  color:#4c5b49;
+  margin-bottom:16px;
+}
+
+.diet-card ul{
+  padding-left:20px;
+}
+
+.diet-card li{
+  margin-bottom:14px;
+  color:#4c5b49;
+}
+
+/* =========================
+   FOOD GRID
+========================= */
+
+.food-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+}
+
+.food-card{
+  background:#fff;
+  padding:32px 28px;
+  border-radius:24px;
+  box-shadow:0 12px 28px rgba(0,0,0,0.05);
+
+  transition:0.3s;
+  border:1px solid #ece7dc;
+}
+
+.food-card:hover{
+  transform:translateY(-6px);
+}
+
+.food-card h3{
+  font-size:1.3rem;
+  margin-bottom:12px;
+  font-family:'Playfair Display',serif;
+}
+
+.food-card p{
+  color:#566452;
+}
+
+.avoid{
+  border-left:5px solid #d9534f;
+}
+
+/* =========================
+   HIGHLIGHT
+========================= */
+
+.highlight-box{
+  margin-top:40px;
+
+  background:#EEF4E8;
+  border-left:5px solid #2eb872;
+
+  padding:24px 28px;
+  border-radius:20px;
+
+  font-weight:600;
+  color:#2d3a2b;
+}
+
+/* =========================
+   INFO GRID
+========================= */
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:30px;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta-box{
+  padding:80px 40px;
+  border-radius:40px;
+
+  background:
+  linear-gradient(135deg,#1f3720,#2f5332);
+
+  text-align:center;
+  color:#fff;
+}
+
+.cta-box h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(34px,5vw,58px);
+  margin-bottom:22px;
+}
+
+.cta-box p{
+  max-width:760px;
+  margin:auto auto 18px;
+  color:rgba(255,255,255,0.88);
+}
+
+.cta-buttons{
+  margin-top:35px;
+
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.primary-btn,
+.secondary-btn{
+  text-decoration:none;
+  padding:14px 34px;
+  border-radius:50px;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.primary-btn{
+  background:#2eb872;
+  color:#ffffff;
+}
+
+.primary-btn:hover{
+  background: #0a2718;
+  transform:translateY(-3px);
+}
+
+.secondary-btn{
+  border:1px solid rgba(255,255,255,0.3);
+  color:#fff;
+  background:rgba(255,255,255,0.08);
+}
+
+.secondary-btn:hover{
+  background:rgba(255,255,255,0.15);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .diet-hero{
+    text-align:center;
+    padding-top:140px;
+  }
+
+  .diet-card{
+    padding:28px;
+  }
+
+  .cta-box{
+    padding:60px 24px;
+  }
+
+}
+
+@media(max-width:500px){
+
+  .hero-content h1{
+    font-size:44px;
+  }
+
+  .diet-section{
+    padding:70px 0;
+  }
+
+  .food-card{
+    padding:24px;
+  }
+
+}
+```

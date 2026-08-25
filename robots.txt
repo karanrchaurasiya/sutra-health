@@ -1,0 +1,9 @@
+User-agent: *
+
+Allow: /
+
+Disallow: /admin/
+Disallow: /private/
+Disallow: /dashboard/
+
+Sitemap: https://lifequality.org.in/sitemap.xml

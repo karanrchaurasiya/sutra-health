@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chakrasana – Wheel Pose | Sutra Health</title>
+  <meta name="description" content="Learn Chakrasana (Wheel Pose) with step-by-step guidance, benefits, and contraindications from Sutra Health." />
+
+
+  
+
+  <style>
+    /* --- Tokens --- */
+    :root {
+      --saffron:   #E8832A;
+      --deep-teal: #1A4A47;
+      --ivory:     #FAF7F2;
+      --charcoal:  #1C1C1C;
+      --muted:     #6B7B6E;
+      --rule:      #D6CFC4;
+
+      --font-display: 'Georgia', 'Times New Roman', serif;
+      --font-body:    system-ui, -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--ivory);
+      color: var(--charcoal);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* --- Header --- */
+    header {
+      background: var(--deep-teal);
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-mark {
+      width: 36px; height: 36px;
+      background: var(--saffron);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    header h1 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: normal;
+      color: white;
+      letter-spacing: 0.02em;
+    }
+
+    header span {
+      color: var(--saffron);
+      font-style: italic;
+    }
+
+    /* --- Breadcrumb --- */
+    .breadcrumb {
+      padding: 0.75rem 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .breadcrumb a { color: var(--deep-teal); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* --- Main layout --- */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+
+    /* --- Eyebrow + title --- */
+    .eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    h2.pose-title {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      line-height: 1.2;
+      color: var(--deep-teal);
+      margin-bottom: 0.25rem;
+    }
+
+    .sanskrit {
+      font-style: italic;
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* --- Video wrapper --- */
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      background: #000;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 24px rgba(26,74,71,0.15);
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    /* --- Schema badge --- */
+    .schema-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #EAF4F3;
+      border: 1px solid #B2D8D4;
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.75rem;
+      color: var(--deep-teal);
+      margin-bottom: 2rem;
+    }
+
+    .schema-badge .dot {
+      width: 8px; height: 8px;
+      background: #2A9D8F;
+      border-radius: 50%;
+    }
+
+    /* --- Content sections --- */
+    .section-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 1.75rem 0;
+    }
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--deep-teal);
+      margin-bottom: 0.75rem;
+    }
+
+    p { margin-bottom: 1rem; color: #2E2E2E; }
+
+    ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    ul li {
+      margin-bottom: 0.4rem;
+      color: #2E2E2E;
+    }
+
+    /* --- Tag list --- */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .tag {
+      background: white;
+      border: 1px solid var(--rule);
+      border-radius: 20px;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* --- Schema block (collapsible) --- */
+    details {
+      background: white;
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      margin-top: 2rem;
+    }
+
+    summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: var(--deep-teal);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      user-select: none;
+    }
+
+    summary::-webkit-details-marker { color: var(--saffron); }
+
+    pre {
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      line-height: 1.6;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      color: #333;
+    }
+
+    /* --- Footer --- */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--rule);
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 600px) {
+      main { padding: 1.5rem 1rem 3rem; }
+      h2.pose-title { font-size: 1.6rem; }
+      header { padding: 1rem; }
+      header h1 { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-mark">S</div>
+    <h1>Sutra Health &nbsp;<span>Yoga Poses</span></h1>
+  </header>
+
+  <nav class="breadcrumb">
+    <a href="#">Home</a> &rsaquo; <a href="#">Yoga Poses</a> &rsaquo; Chakrasana
+  </nav>
+
+  <main>
+
+    <p class="eyebrow">Backbend · Intermediate</p>
+    <h2 class="pose-title">Chakrasana</h2>
+    <p class="sanskrit">चक्रासन &nbsp;·&nbsp; Wheel Pose</p>
+
+    <!-- Embedded Archive.org video -->
+    <div class="video-wrap">
+      <iframe
+        src="https://archive.org/embed/yoga-poses_202606/Chakrasana.mp4"
+        allowfullscreen
+        webkitallowfullscreen
+        mozallowfullscreen
+        title="Chakrasana – Wheel Pose demonstration by Sutra Health">
+      </iframe>
+    </div>
+
+    <!-- Schema confirmation badge -->
+    <div class="schema-badge">
+      <span class="dot"></span>
+      VideoObject schema active &nbsp;·&nbsp; Google Rich Result eligible
+    </div>
+
+    <hr class="section-rule" />
+
+    <h3>About the pose</h3>
+    <p>
+      Chakrasana, or Wheel Pose, is a deep backbend that opens the chest, shoulders, and hip flexors while
+      strengthening the arms, wrists, and legs. It is one of the most energising postures in the Hatha yoga
+      tradition, often used to counter the effects of prolonged sitting and forward-bending work.
+    </p>
+
+    <hr class="section-rule" />
+
+    <h3>Benefits</h3>
+    <ul>
+      <li>Stretches the spine and increases vertebral flexibility</li>
+      <li>Opens the chest and improves respiratory capacity</li>
+      <li>Strengthens wrists, arms, and shoulder girdle</li>
+      <li>Stimulates the thyroid and pituitary glands</li>
+      <li>Energises the nervous system and reduces fatigue</li>
+    </ul>
+
+    <hr class="section-rule" />
+
+    <h3>Contraindications</h3>
+    <ul>
+      <li>Carpal tunnel syndrome or wrist injury</li>
+      <li>Back injury or recent spinal surgery</li>
+      <li>High or low blood pressure</li>
+      <li>Headache or migraine</li>
+    </ul>
+
+    <hr class="section-rule" />
+
+    <h3>Keywords</h3>
+    <div class="tags">
+      <span class="tag">Chakrasana</span>
+      <span class="tag">Wheel Pose</span>
+      <span class="tag">backbend</span>
+      <span class="tag">spine flexibility</span>
+      <span class="tag">yoga</span>
+      <span class="tag">Sutra Health</span>
+      <span class="tag">lifestyle medicine</span>
+      <span class="tag">Hatha yoga</span>
+    </div>
+
+    <!-- Collapsible schema viewer for developer inspection -->
+    <details>
+      <summary>View VideoObject structured data (JSON-LD)</summary>
+      <pre>{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Chakrasana – Wheel Pose",
+  "description": "Step-by-step demonstration of Chakrasana (Wheel Pose) with benefits and contraindications. Part of the Sutra Health yoga poses series.",
+  "thumbnailUrl": "https://archive.org/download/yoga-poses_202606/yoga-poses_202606.thumbs/Chakrasana_000005.jpg",
+  "uploadDate": "2026-06-15",
+  "duration": "PT37S",
+  "contentUrl": "https://archive.org/download/yoga-poses_202606/Chakrasana.mp4",
+  "embedUrl": "https://archive.org/embed/yoga-poses_202606/Chakrasana.mp4",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sutra Health",
+    "url": "https://lifequality.org.in"
+  },
+  "keywords": ["Chakrasana", "Wheel Pose", "yoga", "backbend", "spine flexibility", "Sutra Health", "lifestyle medicine"]
+}</pre>
+    </details>
+
+  </main>
+
+  <footer>
+    &copy; 2026 Sutra Health &nbsp;·&nbsp; Equal Society &nbsp;·&nbsp; <a href="https://lifequality.org.in" style="color: var(--deep-teal);">lifequality.org.in</a>
+  </footer>
+
+</body>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-70BG55XT3Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-70BG55XT3Q');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["NGO", "MedicalBusiness"],
+  "@id": "https://lifequality.org.in/#organization",
+  "name": "Life Quality",
+  "alternateName": ["Sutra Health", "EQUAL Society - Effort For Quality of Life"],
+  "legalName": "Effort For Quality of Life (EQUAL) Society",
+  "url": "https://lifequality.org.in/",
+  "logo": "https://lifequality.org.in/assets/images/og-image.jpg",
+  "image": "https://lifequality.org.in/assets/images/og-image.jpg",
+  "description": "Life Quality (Sutra Health) is a Faridabad-based not-for-profit society helping people reverse chronic conditions such as obesity, hypertension, diabetes, migraine and joint pain through an evidence-based, 21-point integrative protocol combining Yoga therapy, nutrition, Ayurveda and modern medicine. Registered under the Societies Registration Act 1860, the organisation has supported over 1200 patients across 15 years of practice with a reported 98% success rate.",
+  "slogan": "Reverse Chronic Diseases Naturally",
+  "foundingDate": "1997-05-28",
+  "email": "info@lifequality.org.in",
+  "telephone": "+91-9013103676",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "House No. 229, Roof-Top, Sector 46",
+    "addressLocality": "Faridabad",
+    "addressRegion": "Haryana",
+    "postalCode": "121010",
+    "addressCountry": "IN"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "knowsAbout": [
+    "Integrative Lifestyle Medicine",
+    "Yoga Therapy",
+    "Pranayama",
+    "Ayurveda",
+    "Nutrition Counselling",
+    "Chronic Disease Reversal",
+    "Hypertension Management",
+    "Diabetes Management"
+  ],
+  "medicalSpecialty": ["Lifestyle Medicine", "Integrative Medicine"],
+  "nonprofitStatus": "https://schema.org/NonprofitANBI",
+  "sameAs": [
+    "https://www.linkedin.com/in/equal-society-ngo",
+    "https://wa.me/919013103676",
+    "https://www.linkedin.com/in/equal-society-ngo",
+    "https://in.pinterest.com/equal_society/",
+    "mailto:equal.society@gmail.com",
+    "https://www.instagram.com/sutrahealth/",
+    "https://www.facebook.com/people/Sutrahealth-Equal/",
+    "https://www.youtube.com/@sutra-health",
+    "https://lifequality.org.in/airbnb.html",
+    "https://maps.app.goo.gl/Bso3TJCkvqDSLWKP9",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12975079/",
+    "https://zenodo.org/records/15814357",
+    "https://www.preprints.org/manuscript/202603.0183/"
+  ]
+}
+</script>
+</html>
