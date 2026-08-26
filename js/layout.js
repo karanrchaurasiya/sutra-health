@@ -4,15 +4,6 @@ function getComponentUrl(path) {
   return new URL(path, window.location.origin).href;
 }
 
-function injectStylesheet(href) {
-  if (document.querySelector(`link[href="${href}"]`)) return;
-
-  const link = document.createElement("link");
-  link.rel = "stylesheet";
-  link.href = href;
-  document.head.appendChild(link);
-}
-
 async function loadComponent(id, file) {
   const element = document.getElementById(id);
 
@@ -31,6 +22,9 @@ async function loadComponent(id, file) {
     console.error("Component Load Error:", error);
   }
 }
+
+
+// NAVBAR
 
 function initNavbar() {
   const menuBtn = document.getElementById("menuBtn");
@@ -66,17 +60,13 @@ function initNavbar() {
     const navbar = document.querySelector(".navbar");
 
     if (navbar) {
-      navbar.classList.toggle("scrolled", window.scrollY > 50);
+      navbar.classList.toggle(
+        "scrolled",
+        window.scrollY > 50
+      );
     }
   });
 }
-
-
-// SHARED CSS
-
-injectStylesheet(
-  getComponentUrl("/styles/home.css")
-);
 
 
 // COMPONENT PATHS
@@ -87,8 +77,8 @@ const navbarPath =
 const footerPath =
   getComponentUrl("/components/footer.html");
 
-// LOAD COMPONENTS
 
+// LOAD COMPONENTS
 
 (async () => {
   await loadComponent("navbar", navbarPath);
