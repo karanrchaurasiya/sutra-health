@@ -2,7 +2,6 @@
    PRANAYAMA PAGE — UI/UX OPTIMIZED
    ========================================================= */
 
-
 /* =========================================================
    SHARED SUTRA HEALTH TYPOGRAPHY
    Matches the main style.css system
@@ -33,10 +32,10 @@ html {
 }
 
 body {
-margin: 0;
+  margin: 0;
   padding: 0;
   font-family: var(--body-font);
-      background:#fff;
+  background: #fff;
 
   color: #1f3a30;
   overflow-x: hidden;
@@ -72,9 +71,9 @@ a {
 .eyebrow {
   display: inline-block;
   color: #2a7a55;
-  font-size: .78rem;
+  font-size: 0.78rem;
   font-weight: 800;
-  letter-spacing: .11em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
 }
 
@@ -83,7 +82,7 @@ a {
   margin-bottom: 20px;
   background: #e7f2ec;
   border-radius: 999px;
-  letter-spacing: .06em;
+  letter-spacing: 0.06em;
 }
 
 .section-title h1 {
@@ -93,7 +92,7 @@ a {
   color: #17382d;
   font-size: clamp(2rem, 5vw, var(--font-hero));
   line-height: 1.02;
-  letter-spacing: -.045em;
+  letter-spacing: -0.045em;
   font-weight: 750;
 }
 
@@ -117,9 +116,9 @@ a {
   padding: 9px 14px;
   border: 1px solid #dce9e1;
   border-radius: 999px;
-  background: rgba(255,255,255,.7);
+  background: rgba(255, 255, 255, 0.7);
   color: #46645a;
-  font-size: .84rem;
+  font-size: 0.84rem;
   font-weight: 600;
 }
 
@@ -141,7 +140,7 @@ a {
   background: #fff;
   border: 1px solid #edf0ed;
   border-radius: 22px;
-  box-shadow: 0 8px 28px rgba(0,0,0,.045);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.045);
 }
 
 .overview-icon {
@@ -153,7 +152,7 @@ a {
   border-radius: 50%;
   background: #dff4e9;
   color: #2a7a55;
-  font-size: .78rem;
+  font-size: 0.78rem;
   font-weight: 800;
 }
 
@@ -166,7 +165,7 @@ a {
 .overview-card p {
   margin: 0;
   color: #6a7771;
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 1.6;
 }
 
@@ -174,7 +173,7 @@ a {
 
 .learning-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.18fr) minmax(320px, .82fr);
+  grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
   gap: 32px;
   align-items: start;
   margin-bottom: 55px;
@@ -189,7 +188,7 @@ a {
   background: #fff;
   border: 1px solid #edf0ed;
   border-radius: 28px;
-  box-shadow: 0 12px 40px rgba(0,0,0,.055);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.055);
 }
 
 .card-heading {
@@ -206,7 +205,7 @@ a {
   color: #17382d;
   font-size: clamp(1.75rem, 3vw, var(--font-3xl));
   line-height: 1.15;
-  letter-spacing: -.025em;
+  letter-spacing: -0.025em;
 }
 
 .card-heading p,
@@ -235,7 +234,10 @@ a {
   background: #faf8f4;
   border: 1px solid transparent;
   border-radius: 18px;
-  transition: transform .25s ease, background .25s ease, border-color .25s ease;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .practice-item:hover {
@@ -253,7 +255,7 @@ a {
   border-radius: 50%;
   background: #2a7a55;
   color: #fff;
-  font-size: .73rem;
+  font-size: 0.73rem;
   font-weight: 800;
 }
 
@@ -267,7 +269,7 @@ a {
 .practice-item p {
   margin: 0;
   color: #69766f;
-  font-size: .86rem;
+  font-size: 0.86rem;
   line-height: 1.6;
 }
 
@@ -298,7 +300,6 @@ a {
   line-height: 1.55;
 }
 
-
 /* Video card */
 
 .video-card {
@@ -308,14 +309,15 @@ a {
   border: 1px solid #edf0ed;
   border-radius: 22px;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.05);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .video-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.07);
 }
-
 
 /* Smaller video thumbnail */
 
@@ -339,7 +341,6 @@ a {
 .video-card:hover .video-thumb img {
   transform: scale(1.02);
 }
-
 
 /* Play button */
 
@@ -365,7 +366,6 @@ a {
   font-size: 0.9rem;
   padding-left: 2px;
 }
-
 
 /* Compact content */
 
@@ -402,7 +402,6 @@ a {
   line-height: 1.55;
 }
 
-
 /* Smaller button */
 
 .video-content .watch-btn {
@@ -413,11 +412,9 @@ a {
   font-size: 0.82rem;
 }
 
-
 /* ================= DESKTOP BALANCE ================= */
 
 @media (min-width: 1051px) {
-
   .learning-grid {
     align-items: start;
   }
@@ -429,14 +426,11 @@ a {
   .video-card {
     max-width: 100%;
   }
-
 }
-
 
 /* ================= TABLET ================= */
 
 @media (max-width: 1050px) {
-
   .video-column {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -450,14 +444,11 @@ a {
   .video-thumb img {
     height: 190px;
   }
-
 }
-
 
 /* ================= MOBILE ================= */
 
 @media (max-width: 760px) {
-
   .video-column {
     display: flex;
     flex-direction: column;
@@ -471,14 +462,11 @@ a {
   .video-content {
     padding: 18px;
   }
-
 }
-
 
 /* ================= SMALL MOBILE ================= */
 
 @media (max-width: 430px) {
-
   .video-thumb img {
     height: 185px;
   }
@@ -494,7 +482,6 @@ a {
   .video-content p {
     font-size: 0.82rem;
   }
-
 }
 
 /* ================= BUTTON ================= */
@@ -509,9 +496,11 @@ a {
   background: #2a7a55;
   color: #fff;
   text-decoration: none;
-  font-size: .88rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  transition: background .25s ease, transform .25s ease;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
 }
 
 .watch-btn:hover {
@@ -551,7 +540,7 @@ a {
   padding: 28px;
   border-radius: 22px;
   background: #fff;
-  box-shadow: 0 10px 30px rgba(0,0,0,.045);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.045);
 }
 
 .highlight-number {
@@ -571,7 +560,7 @@ a {
 .content-highlight p {
   margin: 0;
   color: #68756f;
-  font-size: .88rem;
+  font-size: 0.88rem;
   line-height: 1.6;
 }
 
@@ -602,7 +591,7 @@ a {
 
 .medical-grid p {
   margin: 0;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .safety-note {
@@ -621,14 +610,14 @@ a {
 
 .safety-note p {
   margin: 0;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 /* ================= BENEFITS ================= */
 
 .benefits-section {
   display: grid;
-  grid-template-columns: .8fr 1.2fr;
+  grid-template-columns: 0.8fr 1.2fr;
   gap: 45px;
   align-items: start;
   margin-bottom: 55px;
@@ -656,12 +645,12 @@ a {
   background: #fff;
   border: 1px solid #edf0ed;
   border-radius: 20px;
-  box-shadow: 0 8px 26px rgba(0,0,0,.04);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.04);
 }
 
 .benefit-item > span {
   color: #2a7a55;
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-weight: 800;
 }
 
@@ -675,7 +664,7 @@ a {
 .benefit-item p {
   margin: 0;
   color: #69766f;
-  font-size: .86rem;
+  font-size: 0.86rem;
   line-height: 1.6;
 }
 
@@ -716,7 +705,6 @@ a {
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 1050px) {
-
   .pranayama-section {
     padding-left: 24px;
     padding-right: 24px;
@@ -751,7 +739,6 @@ a {
 }
 
 @media (max-width: 760px) {
-
   .pranayama-section {
     padding: 0px 16px 65px;
   }
@@ -765,7 +752,7 @@ a {
   }
 
   .hero-description {
-    font-size: .95rem;
+    font-size: 0.95rem;
     line-height: 1.7;
   }
 
@@ -774,7 +761,7 @@ a {
   }
 
   .hero-points span {
-    font-size: .76rem;
+    font-size: 0.76rem;
   }
 
   .protocol-card {
@@ -818,7 +805,6 @@ a {
 }
 
 @media (max-width: 430px) {
-
   .pranayama-section {
     padding-top: 50px;
   }
@@ -847,7 +833,6 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   html {
     scroll-behavior: auto;
   }
@@ -855,12 +840,11 @@ a {
   *,
   *::before,
   *::after {
-    animation-duration: .01ms !important;
+    animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: .01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }
-
 
 /* =========================================================
    PRANAYAMA HERO VIDEO
@@ -896,14 +880,13 @@ a {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(10, 40, 32, 0.94) 0%,
-      rgba(10, 40, 32, 0.82) 35%,
-      rgba(10, 40, 32, 0.48) 62%,
-      rgba(10, 40, 32, 0.18) 100%
-    );
+  background: linear-gradient(
+    90deg,
+    rgba(10, 40, 32, 0.94) 0%,
+    rgba(10, 40, 32, 0.82) 35%,
+    rgba(10, 40, 32, 0.48) 62%,
+    rgba(10, 40, 32, 0.18) 100%
+  );
   pointer-events: none;
 }
 
@@ -918,8 +901,8 @@ a {
 
 .pranayama-page .pranayama-hero .protocol-tag {
   color: #d9f3e4;
-  background: rgba(255,255,255,.12);
-  border: 1px solid rgba(217,243,228,.45);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(217, 243, 228, 0.45);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -931,18 +914,18 @@ a {
   color: #fff;
   font-size: clamp(2.5rem, 5.2vw, 4.4rem);
   line-height: 1.03;
-  letter-spacing: -.04em;
+  letter-spacing: -0.04em;
   font-weight: 700;
-  text-shadow: 0 3px 22px rgba(0,0,0,.22);
+  text-shadow: 0 3px 22px rgba(0, 0, 0, 0.22);
 }
 
 .pranayama-page .pranayama-hero .hero-description {
   max-width: 680px;
   margin: 0 0 28px;
-  color: rgba(255,255,255,.92);
+  color: rgba(255, 255, 255, 0.92);
   font-size: 1.05rem;
   line-height: 1.75;
-  text-shadow: 0 2px 10px rgba(0,0,0,.28);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
 }
 
 .pranayama-page .pranayama-hero .hero-points {
@@ -952,11 +935,11 @@ a {
 
 .pranayama-page .pranayama-hero .hero-points span {
   color: #fff;
-  background: rgba(18,51,43,.58);
-  border-color: rgba(255,255,255,.24);
+  background: rgba(18, 51, 43, 0.58);
+  border-color: rgba(255, 255, 255, 0.24);
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
-  box-shadow: 0 5px 18px rgba(0,0,0,.12);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
 }
 
 @media (max-width: 992px) {
@@ -965,13 +948,12 @@ a {
   }
 
   .pranayama-page .pranayama-hero-overlay {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(10,40,32,.76) 0%,
-        rgba(10,40,32,.88) 52%,
-        rgba(10,40,32,.92) 100%
-      );
+    background: linear-gradient(
+      180deg,
+      rgba(10, 40, 32, 0.76) 0%,
+      rgba(10, 40, 32, 0.88) 52%,
+      rgba(10, 40, 32, 0.92) 100%
+    );
   }
 
   .pranayama-page .pranayama-hero-content {
@@ -1011,7 +993,7 @@ a {
   }
 
   .pranayama-page .pranayama-hero .hero-description {
-    font-size: .96rem;
+    font-size: 0.96rem;
     line-height: 1.65;
   }
 
@@ -1020,7 +1002,7 @@ a {
   }
 
   .pranayama-page .pranayama-hero .hero-points span {
-    font-size: .78rem;
+    font-size: 0.78rem;
     padding: 8px 11px;
   }
 }
@@ -1034,7 +1016,90 @@ a {
 
   .pranayama-page .pranayama-hero {
     background:
-      linear-gradient(rgba(10,40,32,.72), rgba(10,40,32,.88)),
+      linear-gradient(rgba(10, 40, 32, 0.72), rgba(10, 40, 32, 0.88)),
       url("../images/banner.webp") center/cover no-repeat;
   }
+}
+
+/* =========================================================
+   MOBILE HORIZONTAL OVERFLOW FIX
+   ========================================================= */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent sections from becoming wider than the viewport */
+img,
+video,
+iframe,
+svg {
+  max-width: 100%;
+}
+
+/* Pranayama page */
+.pranayama-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Fix full-width hero on mobile */
+@media (max-width: 760px) {
+  .pranayama-page .pranayama-hero {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .pranayama-page .pranayama-hero-content {
+    width: calc(100% - 32px);
+    max-width: 100%;
+  }
+
+  .pranayama-section {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .content-section,
+  .protocol-card,
+  .overview-card,
+  .medical-section,
+  .benefits-section,
+  .final-cta {
+    max-width: 100%;
+  }
+}
+
+.whatsapp-float {
+  position: fixed !important;
+  right: 16px !important;
+  bottom: calc(16px + env(safe-area-inset-bottom)) !important;
+
+  width: 52px !important;
+  height: 52px !important;
+
+  z-index: 99999 !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+}
+
+.whatsapp-float svg {
+  width: 27px;
+  height: 27px;
 }
