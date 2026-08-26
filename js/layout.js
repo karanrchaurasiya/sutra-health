@@ -1,26 +1,25 @@
 // =========================
-// SHARED COMPONENT HELPER
+// COMPONENT LOADER
 // =========================
 
-function getComponentUrl(path) {
-  return new URL(path, window.location.origin).href;
-}
-
-async function loadComponent(id, file) {
+async function loadComponent(id, path) {
   const element = document.getElementById(id);
 
-  if (!element) return;
+  if (!element) {
+    console.warn(`Missing element: #${id}`);
+    return;
+  }
 
   try {
-    const response = await fetch(file);
+    const response = await fetch(path);
 
     if (!response.ok) {
-      throw new Error(`Failed to load ${file}: ${response.status}`);
+      throw new Error(`${response.status} ${response.statusText} - ${path}`);
     }
 
     element.innerHTML = await response.text();
   } catch (error) {
-    console.error("Component Load Error:", error);
+    console.error("Component loading error:", error);
   }
 }
 
@@ -29,121 +28,73 @@ async function loadComponent(id, file) {
 // =========================
 
 function initNavbar() {
-  const menuBtn = document.getElementById("hamburger");
+  const hamburger = document.getElementById("hamburger");
   const navRight = document.getElementById("navRight");
 
-  if (!menuBtn || !navRight) return;
+  if (!hamburger || !navRight) return;
 
-  // Mobile menu
-  menuBtn.addEventListener("click", () => {
-    const isOpen = navRight.classList.toggle("open");
+  hamburger.addEventListener("click", () => {
+    const open = navRight.classList.toggle("open");
 
-    menuBtn.classList.toggle("active", isOpen);
-
-    menuBtn.setAttribute("aria-expanded", String(isOpen));
+    hamburger.classList.toggle("active", open);
+    hamburger.setAttribute("aria-expanded", open);
   });
 
-  // Dropdowns
-  const dropdownItems = document.querySelectorAll(".has-dropdown");
-
-  dropdownItems.forEach((item) => {
-    const trigger = item.querySelector(":scope > a");
-
-    if (!trigger) return;
-
+  // Dropdowns on mobile
+  document.querySelectorAll(".has-dropdown > a").forEach((trigger) => {
     trigger.addEventListener("click", (event) => {
       if (window.innerWidth <= 992) {
         event.preventDefault();
 
-        // Close other dropdowns
-        dropdownItems.forEach((otherItem) => {
-          if (otherItem !== item) {
-            otherItem.classList.remove("open");
+        const parent = trigger.parentElement;
+
+        document.querySelectorAll(".has-dropdown").forEach((item) => {
+          if (item !== parent) {
+            item.classList.remove("open");
           }
         });
 
-        // Toggle current dropdown
-        item.classList.toggle("open");
+        parent.classList.toggle("open");
       }
     });
   });
 
-  // Close mobile menu when clicking a normal link
-  const normalLinks = document.querySelectorAll(
-    ".nav-links a:not(.has-dropdown > a)",
-  );
-
-  normalLinks.forEach((link) => {
+  // Close menu after normal link click
+  document.querySelectorAll(".nav-links a").forEach((link) => {
     link.addEventListener("click", () => {
-      if (window.innerWidth <= 992) {
+      if (
+        window.innerWidth <= 992 &&
+        !link.parentElement.classList.contains("has-dropdown")
+      ) {
         navRight.classList.remove("open");
-        menuBtn.classList.remove("active");
-
-        menuBtn.setAttribute("aria-expanded", "false");
+        hamburger.classList.remove("active");
+        hamburger.setAttribute("aria-expanded", "false");
       }
     });
   });
 
-  // Close menu when clicking outside
-  document.addEventListener("click", (event) => {
-    if (window.innerWidth > 992) return;
-
-    if (!navRight.contains(event.target) && !menuBtn.contains(event.target)) {
-      navRight.classList.remove("open");
-      menuBtn.classList.remove("active");
-
-      menuBtn.setAttribute("aria-expanded", "false");
-
-      dropdownItems.forEach((item) => {
-        item.classList.remove("open");
-      });
-    }
-  });
-
-  // Reset mobile menu when returning to desktop
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 992) {
-      navRight.classList.remove("open");
-      menuBtn.classList.remove("active");
-
-      menuBtn.setAttribute("aria-expanded", "false");
-
-      dropdownItems.forEach((item) => {
-        item.classList.remove("open");
-      });
-    }
-  });
-
-  // Navbar scroll state
+  // Navbar scroll
   const navbar = document.querySelector(".navbar");
 
   if (navbar) {
-    const updateNavbar = () => {
-      navbar.classList.toggle("scrolled", window.scrollY > 50);
-    };
-
-    updateNavbar();
-
-    window.addEventListener("scroll", updateNavbar, { passive: true });
+    window.addEventListener(
+      "scroll",
+      () => {
+        navbar.classList.toggle("scrolled", window.scrollY > 50);
+      },
+      { passive: true },
+    );
   }
 }
 
 // =========================
-// COMPONENT PATHS
+// LOAD
 // =========================
 
-const navbarPath = getComponentUrl("/components/navbar.html");
-
-const footerPath = getComponentUrl("/components/footer.html");
-
-// =========================
-// LOAD COMPONENTS
-// =========================
-
-(async () => {
-  await loadComponent("navbar", navbarPath);
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadComponent("navbar", "/components/navbar.html");
 
   initNavbar();
 
-  await loadComponent("footer", footerPath);
-})();
+  await loadComponent("footer", "/components/footer.html");
+});
