@@ -1,29 +1,98 @@
-(function () {
-  function loadComponent(placeholderId, url, doneEvent) {
-    const el = document.getElementById(placeholderId);
-    if (!el) return;
+// SHARED COMPONENT HELPER
 
-    fetch(url)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`Failed to load ${url}: ${res.status}`);
-        }
-        return res.text();
-      })
-      .then((html) => {
-        el.innerHTML = html;
-        document.dispatchEvent(new Event(doneEvent));
-      })
-      .catch((err) => {
-        console.error(err);
-        el.innerHTML = `<p style="padding:12px;color:#900;">
-          Failed to load ${url}. Are you running this through a local server?
-        </p>`;
-      });
+function getComponentUrl(path) {
+  return new URL(path, window.location.origin).href;
+}
+
+function injectStylesheet(href) {
+  if (document.querySelector(`link[href="${href}"]`)) return;
+
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = href;
+  document.head.appendChild(link);
+}
+
+async function loadComponent(id, file) {
+  const element = document.getElementById(id);
+
+  if (!element) return;
+
+  try {
+    const response = await fetch(file);
+
+    if (!response.ok) {
+      throw new Error(`Failed to load ${file}: ${response.status}`);
+    }
+
+    element.innerHTML = await response.text();
+
+  } catch (error) {
+    console.error("Component Load Error:", error);
+  }
+}
+
+function initNavbar() {
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.querySelector(".nav-links");
+
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show-menu");
+
+      menuBtn.innerHTML =
+        navLinks.classList.contains("show-menu")
+          ? "✕"
+          : "☰";
+    });
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
-   loadComponent('navbar', '/components/navbar.html', 'navbar:loaded');
-    loadComponent('site-footer', '/components/footer.html', 'footer:loaded'); 
+  const dropdowns = document.querySelectorAll(".dropdown");
+
+  dropdowns.forEach((dropdown) => {
+    const trigger = dropdown.querySelector(":scope > a");
+
+    if (!trigger) return;
+
+    trigger.addEventListener("click", (e) => {
+      if (window.innerWidth <= 992) {
+        e.preventDefault();
+        dropdown.classList.toggle("active");
+      }
+    });
   });
+
+  window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navbar");
+
+    if (navbar) {
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
+    }
+  });
+}
+
+
+// SHARED CSS
+
+injectStylesheet(
+  getComponentUrl("/styles/home.css")
+);
+
+
+// COMPONENT PATHS
+
+const navbarPath =
+  getComponentUrl("/components/navbar.html");
+
+const footerPath =
+  getComponentUrl("/components/footer.html");
+
+// LOAD COMPONENTS
+
+
+(async () => {
+  await loadComponent("navbar", navbarPath);
+  initNavbar();
+
+  await loadComponent("footer", footerPath);
 })();
