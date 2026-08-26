@@ -23,7 +23,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('navbar', '/components/navbar.html', 'navbar:loaded');
-    loadComponent('site-footer', '/components/footer.html', 'footer:loaded');
+   loadComponent('navbar', '/components/navbar.html', 'navbar:loaded');
+    loadComponent('site-footer', '/components/footer.html', 'footer:loaded'); 
   });
 })();
