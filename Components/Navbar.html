@@ -1,177 +1,111 @@
 <nav class="navbar">
+  <a href="../index.html" class="logo">
+    <span class="logo-icon">
+      <img src="../images/Sutrahealth Logo.png" alt="Sutra Health logo" />
+    </span>
+    <span class="logo-text">
+      <h1>Sutra Health</h1>
+      <span>Integrative Lifestyle Healthcare</span>
+    </span>
+  </a>
 
-  <div class="container">
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 
-    <!-- Logo -->
-    <a href="#" class="logo">
-      <div class="logo-icon">
-        <img src="/images/Sutrahealth Logo.png" alt="Sutra Health Logo">
-      </div>
-      <span>Sutra Health</span>
-    </a>
+  <div class="nav-right" id="navRight">
+    <ul class="nav-links">
+      <li data-nav="home">
+        <a href="../index.html">Home</a>
+      </li>
 
-    <!-- Nav Links -->
-    <div class="nav-links">
+      <li data-nav="about">
+        <a href="../equal-society.html">About Us</a>
+      </li>
 
-      <a href="/index.html">Home</a>
-
-      <a href="../equal-society.html">
-        About EQUAL Society
-      </a>
-
-      <!-- Why Integrative Medicine Dropdown -->
-      <div class="dropdown">
-
-        <a href="#">
-          Why Integrative Medicine? ▼
+      <li class="has-dropdown">
+        <a href="#" aria-haspopup="true">
+          Why Integrative Medicine? <span class="arrow"></span>
         </a>
 
-        <div class="dropdown-menu">
-
+        <div class="dropdown">
           <a href="../programs/IntegrativeMedicine.html">
-            Why Integrative Medicine?
+            Integrative Medicine
           </a>
 
-          <a href="../LifeStyle/research.html">
-            Research Doctor
-          </a>
-
+          <a href="../LifeStyle/research.html"> Research Doctor </a>
         </div>
+      </li>
 
-      </div>
-
-      <!-- Programs Dropdown -->
-      <div class="dropdown">
-
-        <a href="#">
-          Programs ▼
+      <li class="has-dropdown">
+        <a href="#" aria-haspopup="true">
+          Programs <span class="arrow"></span>
         </a>
 
-        <div class="dropdown-menu">
+        <div class="dropdown">
+          <a href="../consultation.html"> Physician Consultation </a>
 
-          <a href="../consultation.html">
-            Physician Consultation
-          </a>
+          <a href="../programs/dietary-advice.html"> Dietary Advice </a>
 
-          <a href="../programs/dietary-advice.html">
-            Dietary Advice
-          </a>
+          <a href="../programs/shirodhara.html"> Shirodhara </a>
 
-          <a href="../programs/shirodhara.html">
-            Shirodhara
-          </a>
-
-          <a href="../programs/my-buddy.html">
-            My Buddy
-          </a>
+          <a href="../programs/my-buddy.html"> My Buddy </a>
 
           <a href="../programs/singing-kirtan-dance.html">
             Singing, Kirtan and Dance
           </a>
-
         </div>
+      </li>
 
-      </div>
+      <li class="has-dropdown">
+        <a href="#" aria-haspopup="true"> Yoga <span class="arrow"></span> </a>
 
-      <!-- Yoga Dropdown -->
-      <div class="dropdown">
+        <div class="dropdown">
+          <a href="../Yoga/yoga-asana.html"> Yoga Asana Protocol </a>
 
-        <a href="#">
-          Yoga ▼
+          <a href="../Yoga/pranayama.html"> Pranayama </a>
+
+          <a href="../Yoga/meditation.html"> Meditation (Dhayana) </a>
+        </div>
+      </li>
+
+      <li class="has-dropdown">
+        <a href="#" aria-haspopup="true">
+          Lifestyle <span class="arrow"></span>
         </a>
 
-        <div class="dropdown-menu">
-
-          <a href="../Yoga/yoga-asana.html">
-            Yoga Asana Protocol
-          </a>
-
-          <a href="../Yoga/pranayama.html">
-            Pranayama
-          </a>
-
-          <a href="../Yoga/meditation.html">
-            Meditation (Dhayana)
-          </a>
-
-        </div>
-
-      </div>
-
-      <!-- Lifestyle Dropdown -->
-      <div class="dropdown">
-
-        <a href="#">
-          Lifestyle ▼
-        </a>
-
-        <div class="dropdown-menu">
-
-          <a href="../LifeStyle/LifeStyleCounseling.html">
+        <div class="dropdown">
+          <a href="../lifestyle/lifestyle-counseling.html">
             LifeStyle Counseling
           </a>
 
-          <a href="../LifeStyle/nature-walks.html">
-            Nature Walks
-          </a>
+          <a href="../lifeStyle/nature-walks.html"> Nature Walks </a>
 
-          <a href="../LifeStyle/positive-thinking.html">
+          <a href="../lifeStyle/positive-thinking.html">
             The Power of Positive Thinking
           </a>
 
-          <a href="../LifeStyle/soft-sun-rays.html">
+          <a href="../lifeStyle/soft-sun-rays.html">
             Benefits of Soft Sun Rays
           </a>
-
         </div>
+      </li>
 
-      </div>
+      <li data-nav="resources">
+        <a href="../resources.html">Resources</a>
+      </li>
 
-      <a href="../volunteer.html">Volunteer</a>
-      <!-- Gallery Dropdown -->
-<div class="dropdown">
+      <li data-nav="gallery">
+        <a href="../Gallery.html">Gallery</a>
+      </li>
 
-  <a href="../Gallery.html">
-    Gallery 
-  </a>
+      <li data-nav="contact">
+        <a href="../Contact.html">Contact</a>
+      </li>
+    </ul>
 
-  
-
-</div>
-
-      <!-- Contact Dropdown -->
-      <div class="dropdown">
-
-        <a href="#">
-          Contact ▼
-        </a>
-
-        <div class="dropdown-menu">
-
-          <a href="../Contact.html">   
-            Contact
-          </a>
-
-          <a href="../retreat.html">
-            Recharge Retreat
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- Button -->
-    <a href="../Contact.html" class="book-btn">
-      Book Appointment →
+    <a href="../Contact.html" class="cta-btn">
+      &#128197; Book Appointment &rarr;
     </a>
-
-    <!-- Hamburger -->
-    <button class="menu-btn" id="menuBtn">
-      ☰
-    </button>
-
   </div>
-
 </nav>
