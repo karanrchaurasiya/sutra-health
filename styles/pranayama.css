@@ -1103,3 +1103,211 @@ svg {
   width: 27px;
   height: 27px;
 }
+
+/* =========================================================
+   FINAL MOBILE PRANAYAMA FIX
+   ========================================================= */
+
+@media (max-width: 760px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+  }
+
+  .pranayama-page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .pranayama-section {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 16px 60px;
+  }
+
+  /* HERO */
+  .pranayama-page .pranayama-hero {
+    width: 100%;
+    max-width: 100%;
+    min-height: 540px;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .pranayama-page .pranayama-hero-content {
+    width: calc(100% - 32px);
+    max-width: 600px;
+    padding: 55px 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .pranayama-page .pranayama-hero h1 {
+    max-width: 560px;
+    margin: 0 auto 20px;
+    font-size: clamp(2.1rem, 9vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+  }
+
+  .pranayama-page .pranayama-hero .hero-description {
+    max-width: 520px;
+    margin: 0 auto 24px;
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .pranayama-page .pranayama-hero .protocol-tag {
+    margin-bottom: 20px;
+    padding: 8px 15px;
+    font-size: 0.72rem;
+  }
+
+  .pranayama-page .pranayama-hero .hero-points {
+    max-width: 500px;
+    margin: 0 auto;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .pranayama-page .pranayama-hero .hero-points span {
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+
+  /* Keep video readable */
+  .pranayama-page .pranayama-hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(8, 40, 31, 0.72) 0%,
+      rgba(8, 40, 31, 0.82) 50%,
+      rgba(8, 40, 31, 0.94) 100%
+    );
+  }
+
+  .pranayama-page .pranayama-hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 60% center;
+  }
+
+  /* OVERVIEW */
+  .overview-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .overview-card {
+    width: 100%;
+    min-width: 0;
+    padding: 20px;
+  }
+
+  /* CONTENT */
+  .content-section,
+  .protocol-card,
+  .medical-section,
+  .benefits-section,
+  .final-cta {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .content-section {
+    padding: 28px 20px;
+  }
+
+  /* PRACTICES */
+  .practice-list {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-item {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* VIDEOS */
+  .video-column {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .video-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .video-thumb img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  /* MEDICAL */
+  .medical-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* BENEFITS */
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* CTA */
+  .final-cta {
+    padding: 40px 20px;
+  }
+
+  /* WHATSAPP */
+  .whatsapp-float {
+    position: fixed !important;
+    right: 14px !important;
+    bottom: calc(14px + env(safe-area-inset-bottom)) !important;
+    width: 54px !important;
+    height: 54px !important;
+    z-index: 99999 !important;
+  }
+
+  .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* EXTRA SMALL PHONES */
+@media (max-width: 380px) {
+  .pranayama-page .pranayama-hero {
+    min-height: 520px;
+  }
+
+  .pranayama-page .pranayama-hero-content {
+    width: calc(100% - 24px);
+    padding: 45px 0;
+  }
+
+  .pranayama-page .pranayama-hero h1 {
+    font-size: 2rem;
+  }
+
+  .pranayama-page .pranayama-hero .hero-description {
+    font-size: 0.9rem;
+  }
+
+  .pranayama-page .pranayama-hero .hero-points span {
+    font-size: 0.7rem;
+    padding: 7px 10px;
+  }
+
+  .whatsapp-float {
+    right: 12px !important;
+    bottom: calc(12px + env(safe-area-inset-bottom)) !important;
+  }
+}
