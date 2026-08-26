@@ -1,16 +1,9 @@
+// =========================
 // SHARED COMPONENT HELPER
+// =========================
 
 function getComponentUrl(path) {
   return new URL(path, window.location.origin).href;
-}
-
-function injectStylesheet(href) {
-  if (document.querySelector(`link[href="${href}"]`)) return;
-
-  const link = document.createElement("link");
-  link.rel = "stylesheet";
-  link.href = href;
-  document.head.appendChild(link);
 }
 
 async function loadComponent(id, file) {
@@ -31,58 +24,125 @@ async function loadComponent(id, file) {
   }
 }
 
+// =========================
+// NAVBAR
+// =========================
+
 function initNavbar() {
-  const menuBtn = document.getElementById("menuBtn");
-  const navLinks = document.querySelector(".nav-links");
+  const menuBtn = document.getElementById("hamburger");
+  const navRight = document.getElementById("navRight");
 
-  if (menuBtn && navLinks) {
-    menuBtn.addEventListener("click", () => {
-      navLinks.classList.toggle("show-menu");
+  if (!menuBtn || !navRight) return;
 
-      menuBtn.innerHTML = navLinks.classList.contains("show-menu") ? "✕" : "☰";
-    });
-  }
+  // Mobile menu
+  menuBtn.addEventListener("click", () => {
+    const isOpen = navRight.classList.toggle("open");
 
-  const dropdowns = document.querySelectorAll(".dropdown");
+    menuBtn.classList.toggle("active", isOpen);
 
-  dropdowns.forEach((dropdown) => {
-    const trigger = dropdown.querySelector(":scope > a");
+    menuBtn.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  // Dropdowns
+  const dropdownItems = document.querySelectorAll(".has-dropdown");
+
+  dropdownItems.forEach((item) => {
+    const trigger = item.querySelector(":scope > a");
 
     if (!trigger) return;
 
-    trigger.addEventListener("click", (e) => {
+    trigger.addEventListener("click", (event) => {
       if (window.innerWidth <= 992) {
-        e.preventDefault();
-        dropdown.classList.toggle("active");
+        event.preventDefault();
+
+        // Close other dropdowns
+        dropdownItems.forEach((otherItem) => {
+          if (otherItem !== item) {
+            otherItem.classList.remove("open");
+          }
+        });
+
+        // Toggle current dropdown
+        item.classList.toggle("open");
       }
     });
   });
 
-  window.addEventListener("scroll", () => {
-    const navbar = document.querySelector(".navbar");
+  // Close mobile menu when clicking a normal link
+  const normalLinks = document.querySelectorAll(
+    ".nav-links a:not(.has-dropdown > a)",
+  );
 
-    if (navbar) {
-      navbar.classList.toggle("scrolled", window.scrollY > 50);
+  normalLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 992) {
+        navRight.classList.remove("open");
+        menuBtn.classList.remove("active");
+
+        menuBtn.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (event) => {
+    if (window.innerWidth > 992) return;
+
+    if (!navRight.contains(event.target) && !menuBtn.contains(event.target)) {
+      navRight.classList.remove("open");
+      menuBtn.classList.remove("active");
+
+      menuBtn.setAttribute("aria-expanded", "false");
+
+      dropdownItems.forEach((item) => {
+        item.classList.remove("open");
+      });
     }
   });
+
+  // Reset mobile menu when returning to desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 992) {
+      navRight.classList.remove("open");
+      menuBtn.classList.remove("active");
+
+      menuBtn.setAttribute("aria-expanded", "false");
+
+      dropdownItems.forEach((item) => {
+        item.classList.remove("open");
+      });
+    }
+  });
+
+  // Navbar scroll state
+  const navbar = document.querySelector(".navbar");
+
+  if (navbar) {
+    const updateNavbar = () => {
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
+    };
+
+    updateNavbar();
+
+    window.addEventListener("scroll", updateNavbar, { passive: true });
+  }
 }
 
-// SHARED CSS
-
-injectStylesheet(getComponentUrl("/styles/navbar.css"));
-
-injectStylesheet(getComponentUrl("/styles/footer.css"));
-
+// =========================
 // COMPONENT PATHS
+// =========================
 
 const navbarPath = getComponentUrl("/components/navbar.html");
 
 const footerPath = getComponentUrl("/components/footer.html");
 
+// =========================
 // LOAD COMPONENTS
+// =========================
 
 (async () => {
   await loadComponent("navbar", navbarPath);
+
   initNavbar();
 
   await loadComponent("footer", footerPath);
