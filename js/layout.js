@@ -1,25 +1,32 @@
 // =========================
-// COMPONENT LOADER
+// SHARED COMPONENT HELPER
 // =========================
 
-async function loadComponent(id, path) {
+function getComponentUrl(path) {
+  return new URL(path, window.location.href).href;
+}
+
+// =========================
+// LOAD COMPONENT
+// =========================
+
+async function loadComponent(id, file) {
   const element = document.getElementById(id);
 
-  if (!element) {
-    console.warn(`Missing element: #${id}`);
-    return;
-  }
+  if (!element) return;
 
   try {
-    const response = await fetch(path);
+    const response = await fetch(file);
 
     if (!response.ok) {
-      throw new Error(`${response.status} ${response.statusText} - ${path}`);
+      throw new Error(`Failed to load ${file}: ${response.status}`);
     }
 
-    element.innerHTML = await response.text();
+    const data = await response.text();
+
+    element.innerHTML = data;
   } catch (error) {
-    console.error("Component loading error:", error);
+    console.error("Component Load Error:", error);
   }
 }
 
@@ -28,73 +35,63 @@ async function loadComponent(id, path) {
 // =========================
 
 function initNavbar() {
-  const hamburger = document.getElementById("hamburger");
-  const navRight = document.getElementById("navRight");
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.querySelector(".nav-links");
 
-  if (!hamburger || !navRight) return;
+  // Mobile menu
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show-menu");
 
-  hamburger.addEventListener("click", () => {
-    const open = navRight.classList.toggle("open");
-
-    hamburger.classList.toggle("active", open);
-    hamburger.setAttribute("aria-expanded", open);
-  });
-
-  // Dropdowns on mobile
-  document.querySelectorAll(".has-dropdown > a").forEach((trigger) => {
-    trigger.addEventListener("click", (event) => {
-      if (window.innerWidth <= 992) {
-        event.preventDefault();
-
-        const parent = trigger.parentElement;
-
-        document.querySelectorAll(".has-dropdown").forEach((item) => {
-          if (item !== parent) {
-            item.classList.remove("open");
-          }
-        });
-
-        parent.classList.toggle("open");
-      }
+      menuBtn.innerHTML = navLinks.classList.contains("show-menu") ? "✕" : "☰";
     });
-  });
-
-  // Close menu after normal link click
-  document.querySelectorAll(".nav-links a").forEach((link) => {
-    link.addEventListener("click", () => {
-      if (
-        window.innerWidth <= 992 &&
-        !link.parentElement.classList.contains("has-dropdown")
-      ) {
-        navRight.classList.remove("open");
-        hamburger.classList.remove("active");
-        hamburger.setAttribute("aria-expanded", "false");
-      }
-    });
-  });
-
-  // Navbar scroll
-  const navbar = document.querySelector(".navbar");
-
-  if (navbar) {
-    window.addEventListener(
-      "scroll",
-      () => {
-        navbar.classList.toggle("scrolled", window.scrollY > 50);
-      },
-      { passive: true },
-    );
   }
+
+  // Mobile dropdowns
+  const dropdowns = document.querySelectorAll(".dropdown");
+
+  dropdowns.forEach((dropdown) => {
+    const trigger = dropdown.querySelector(":scope > a");
+
+    if (!trigger) return;
+
+    trigger.addEventListener("click", (e) => {
+      if (window.innerWidth <= 992) {
+        e.preventDefault();
+
+        dropdown.classList.toggle("active");
+      }
+    });
+  });
+
+  // Navbar scroll effect
+  window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navbar");
+
+    if (!navbar) return;
+
+    navbar.classList.toggle("scrolled", window.scrollY > 50);
+  });
 }
 
 // =========================
-// LOAD
+// COMPONENT PATHS
+// =========================
+
+// KEEP THESE EXACTLY LIKE OLD WORKING CODE
+
+const navbarPath = getComponentUrl("../Components/Navbar.html");
+
+const footerPath = getComponentUrl("../Components/Footer.html");
+
+// =========================
+// LOAD NAVBAR + FOOTER
 // =========================
 
 document.addEventListener("DOMContentLoaded", async () => {
-  await loadComponent("navbar", "/components/navbar.html");
+  await loadComponent("navbar", navbarPath);
 
   initNavbar();
 
-  await loadComponent("footer", "/components/footer.html");
+  await loadComponent("footer", footerPath);
 });
