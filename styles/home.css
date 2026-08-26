@@ -334,6 +334,8 @@
   @media (max-width: 480px){
     .logo-text h1{ font-size:18px; }
     .logo-text span{ font-size:12px; }
+     .navbar {
+    padding:14px 20px !important;}
   }
 
   /* ===== HERO ===== */
