@@ -4,6 +4,15 @@ function getComponentUrl(path) {
   return new URL(path, window.location.origin).href;
 }
 
+function injectStylesheet(href) {
+  if (document.querySelector(`link[href="${href}"]`)) return;
+
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = href;
+  document.head.appendChild(link);
+}
+
 async function loadComponent(id, file) {
   const element = document.getElementById(id);
 
@@ -17,14 +26,10 @@ async function loadComponent(id, file) {
     }
 
     element.innerHTML = await response.text();
-
   } catch (error) {
     console.error("Component Load Error:", error);
   }
 }
-
-
-// NAVBAR
 
 function initNavbar() {
   const menuBtn = document.getElementById("menuBtn");
@@ -34,10 +39,7 @@ function initNavbar() {
     menuBtn.addEventListener("click", () => {
       navLinks.classList.toggle("show-menu");
 
-      menuBtn.innerHTML =
-        navLinks.classList.contains("show-menu")
-          ? "✕"
-          : "☰";
+      menuBtn.innerHTML = navLinks.classList.contains("show-menu") ? "✕" : "☰";
     });
   }
 
@@ -60,23 +62,22 @@ function initNavbar() {
     const navbar = document.querySelector(".navbar");
 
     if (navbar) {
-      navbar.classList.toggle(
-        "scrolled",
-        window.scrollY > 50
-      );
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
     }
   });
 }
 
+// SHARED CSS
+
+injectStylesheet(getComponentUrl("/styles/navbar.css"));
+
+injectStylesheet(getComponentUrl("/styles/footer.css"));
 
 // COMPONENT PATHS
 
-const navbarPath =
-  getComponentUrl("/components/navbar.html");
+const navbarPath = getComponentUrl("/components/navbar.html");
 
-const footerPath =
-  getComponentUrl("/components/footer.html");
-
+const footerPath = getComponentUrl("/components/footer.html");
 
 // LOAD COMPONENTS
 
