@@ -1311,3 +1311,153 @@ svg {
     bottom: calc(12px + env(safe-area-inset-bottom)) !important;
   }
 }
+
+/* =========================================================
+   MOBILE — FULL WIDTH HERO
+   Keep all inner content properly contained
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  .pranayama-section {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+  }
+
+  /* FULL WIDTH HERO */
+  .pranayama-page .pranayama-hero {
+    width: 100%;
+    max-width: 100%;
+    min-height: 540px;
+
+    margin-left: 0;
+    margin-right: 0;
+
+    border-radius: 0;
+  }
+
+  /* HERO CONTENT */
+  .pranayama-page .pranayama-hero-content {
+    width: calc(100% - 32px);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 55px 0;
+
+    text-align: center;
+  }
+
+  .pranayama-page .pranayama-hero h1 {
+    max-width: 560px;
+    margin: 0 auto 20px;
+
+    font-size: clamp(2.1rem, 9vw, 3rem);
+    line-height: 1.05;
+  }
+
+  .pranayama-page .pranayama-hero .hero-description {
+    max-width: 540px;
+    margin: 0 auto 24px;
+
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .pranayama-page .pranayama-hero .hero-points {
+    max-width: 540px;
+    margin: 0 auto;
+
+    justify-content: center;
+  }
+
+
+  /* =====================================================
+     CONTENT — RESTORE SIDE SPACING
+     ===================================================== */
+
+  .overview-grid,
+  .content-section,
+  .learning-grid,
+  .medical-section,
+  .benefits-section,
+  .final-cta {
+    width: calc(100% - 32px);
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .overview-grid {
+    margin-top: 18px;
+  }
+
+  .content-section {
+    padding: 28px 20px;
+  }
+
+
+  /* =====================================================
+     VIDEO / CARDS
+     ===================================================== */
+
+  .protocol-card,
+  .video-card,
+  .overview-card,
+  .benefit-item {
+    width: 100%;
+    min-width: 0;
+  }
+
+
+  /* =====================================================
+     WHATSAPP
+     ===================================================== */
+
+  .whatsapp-float {
+    position: fixed !important;
+
+    right: 14px !important;
+    bottom: calc(14px + env(safe-area-inset-bottom)) !important;
+
+    width: 54px !important;
+    height: 54px !important;
+
+    z-index: 99999 !important;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+  .pranayama-page .pranayama-hero {
+    min-height: 520px;
+  }
+
+  .pranayama-page .pranayama-hero-content {
+    width: calc(100% - 28px);
+    padding: 48px 0;
+  }
+
+  .pranayama-page .pranayama-hero h1 {
+    font-size: 2.05rem;
+  }
+
+  .pranayama-page .pranayama-hero .hero-description {
+    font-size: 0.9rem;
+  }
+
+  .overview-grid,
+  .content-section,
+  .learning-grid,
+  .medical-section,
+  .benefits-section,
+  .final-cta {
+    width: calc(100% - 28px);
+  }
+}
