@@ -1059,7 +1059,7 @@ a {
       rgba(10, 45, 36, 0.35) 75%,
       rgba(10, 45, 36, 0.18) 100%
     ),
-    url("../images/pranayama-hero.webp");
+    url("../images/pranayama.jpg");
 
   background-size: cover;
   background-position: center;
@@ -1145,7 +1145,7 @@ a {
         rgba(10,45,36,.78) 55%,
         rgba(10,45,36,.9) 100%
       ),
-      url("../images/pranayama-hero.webp");
+      url("../images/pranayama.jpg");
 
     background-position: center;
   }
