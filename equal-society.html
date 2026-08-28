@@ -335,7 +335,7 @@
         <div class="donate-inner">
           <div class="section-heading-left donate-heading">
             <span class="eyebrow">Support Us</span>
-            <h2>Donate to EQUAL Society</h2>
+            <h2 style="color: white;">Donate to EQUAL Society</h2>
             <p>Donations may qualify for deduction under Section 80G of the Income Tax Act.</p>
           </div>
 
@@ -550,6 +550,7 @@
 
   <script src="./js/layout.js" defer></script>
   <script src="./js/script.js" defer></script>
+ 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 
   <script>
@@ -564,18 +565,7 @@
       }
     });
 
-    document.querySelectorAll(".faq-question").forEach(function (button) {
-      button.addEventListener("click", function () {
-        const item = button.closest(".faq-item");
-        const isOpen = item.classList.contains("open");
-
-        document.querySelectorAll(".faq-item").forEach(function (other) {
-          other.classList.remove("open");
-        });
-
-        if (!isOpen) item.classList.add("open");
-      });
-    });
+   
   </script>
 
   <!-- Organization schema -->
